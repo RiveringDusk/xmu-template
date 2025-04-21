@@ -1,0 +1,189 @@
+%!TEX program = xelatex
+\documentclass{xmu}
+\begin{document}
+
+% 基础信息
+
+\print % 电子版 / 打印版（打印版将在某些偶数页产生空白页）
+% \arabicchapter % 取消注释后，仅使用数字作为章的编号
+% \design % 毕业设计 / 毕业论文（取消注释即为毕业设计）
+% \minor % 主修 / 辅修（取消注释即为辅修）
+\title{中文标题}{English Title}
+\author{周淡茗}
+\idn{22920212204505}
+\college{信息学院}
+\subject{你的专业}
+\grade{你的年级}
+\teacher{校内指导教师\; 职称}
+\otherteacher{校外指导教师\; 职称} % 注释则不显示校外指导教师
+\pubdate{完成时间}
+\keywords{中文关键词}{English keywords}
+
+% 封面、承诺书
+
+\maketitle
+
+% 致谢
+
+\begin{acknowledgement}
+    致谢内容。
+\end{acknowledgement}
+
+% 中文摘要
+
+\begin{abstract}
+    摘要内容。
+\end{abstract}
+
+% 英文摘要
+
+\begin{enabstract}
+    Abstract Contents.
+\end{enabstract}
+
+% 目录
+
+\tableofcontents
+
+% 正文% 正文
+
+\xmuchapter{摘要}{Abstract}
+正文内容，脚注\footnote{脚注内容}，引用参考文献\cite{cite1}。
+
+\xmuchapter{绪论}{Introduction}
+\xmusection{研究背景与意义}{Research Background and Significance}
+正文内容。
+
+\xmusection{国内外研究现状}{Research Status at Home and Abroad}
+正文内容。
+
+\xmusection{研究目标与内容}{Research Objectives and Content}
+正文内容。
+
+\xmusection{论文组织结构}{Thesis Organization Structure}
+正文内容。
+
+\xmuchapter{系统相关技术与理论基础}{System-related Technologies and Theoretical Foundations}
+\xmusection{前端技术框架}{Front-end Technology Framework}
+正文内容。
+
+\xmusection{后端技术与 API 设计}{Back-end Technology and API Design}
+正文内容。
+
+\xmusection{数据通信与状态管理}{Data Communication and State Management}
+正文内容。
+
+\xmusection{流程具象化设计}{Process Visualization Design}
+\xmusubsection{对话式交互的设计理念}{Design Concept of Dialog-based Interaction}
+正文内容。
+
+\xmusubsection{常见的流程具象化实现方式}{Common Process Visualization Implementation Methods}
+正文内容。
+
+\xmusection{本章小结}{Summary of This Chapter}
+正文内容。
+
+\xmuchapter{系统需求分析}{System Requirements Analysis}
+\xmusection{业务需求}{Business Requirements}
+正文内容。
+
+\xmusection{功能性需求}{Functional Requirements}
+\xmusubsection{增删改查功能}{CRUD Functionality}
+正文内容。
+
+\xmusubsection{对话式流程引导}{Dialog-based Process Guidance}
+正文内容。
+
+\xmusection{非功能性需求}{Non-functional Requirements}
+正文内容。
+
+\xmusection{本章小结}{Summary of This Chapter}
+正文内容。
+
+\xmuchapter{系统详细设计}{System Detailed Design}
+\xmusection{总体架构设计}{Overall Architecture Design}
+正文内容。
+
+\xmusection{核心模块设计}{Core Module Design}
+\xmusubsection{增删改查模块}{CRUD Module}
+正文内容。
+
+\xmusubsection{对话式流程引导模块}{Dialog-based Process Guidance Module}
+正文内容。
+
+%\xmusection{安全设计}{Security Design}
+%正文内容。
+
+\xmusection{本章小结}{Summary of This Chapter}
+正文内容。
+
+\xmuchapter{系统实现}{System Implementation}
+\xmusection{开发环境与工具链}{Development Environment and Toolchain}
+正文内容。
+
+\xmusection{核心模块实现}{Core Module Implementation}
+\xmusubsection{增删改查功能}{CRUD Functionality}
+正文内容。
+
+\xmusubsection{对话式流程引导}{Dialog-based Process Guidance}
+正文内容。
+
+\xmusection{本章小结}{Summary of This Chapter}
+正文内容。
+
+\xmuchapter{系统测试与验证}{System Testing and Validation}
+\xmusection{测试环境}{Testing Environment}
+正文内容。
+
+\xmusection{功能测试}{Functional Testing}
+正文内容。
+
+\xmusection{安全测试}{Security Testing}
+正文内容。
+
+\xmusection{性能测试}{Performance Testing}
+正文内容。
+
+\xmusection{本章小结}{Summary of This Chapter}
+正文内容。
+
+\xmuchapter{总结与展望}{Conclusion and Outlook}
+\xmusection{研究成果总结}{Summary of Research Achievements}
+正文内容。
+
+\xmusection{不足与改进方向}{Shortcomings and Improvement Directions}
+正文内容。
+
+\xmusection{工作展望}{Future Work Prospects}
+正文内容。
+
+\xmuchapter{参考文献}{References}
+正文内容。
+
+\xmuchapter{附录}{Appendix}
+正文内容。
+
+\xmuchapter{致谢}{Acknowledgments}
+正文内容。
+% 参考文献
+
+\begin{reference}
+    % 如果需要使用 bib 文件导入参考文献，则取消注释下一行
+    % \bibliography{references.bib}
+    % 已自动按照 GB/T 7714-2005 设置参考文献的引用格式
+
+    % 手动添加参考文献
+    \begin{thebibliography}{1} % 括号内数字为参考文献条数
+            \bibitem[1]{cite1} 参考文献1
+    \end{thebibliography}
+\end{reference}
+
+% 附录
+
+\begin{appendix}
+    附录内容。
+\end{appendix}
+
+% 如果想要将致谢放在最后，可将最前的致谢移动至此
+
+\end{document}
