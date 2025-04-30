@@ -51,7 +51,16 @@
 \newcommand{\design}{\def\xmu@design{true}}                             % 毕业设计 / 毕业论文
 \newcommand{\minor}{\def\xmu@minor{true}}                               % 主修 / 辅修
 \newcommand{\arabicchapter}{\def\xmu@arabicchapter{true}}               % 章节使用阿拉伯数字编号
-\renewcommand{\title}[2]{\def\xmu@title{#1}\def\xmu@entitle{#2}}        % 标题
+%\renewcommand{\title}[2]{\def\xmu@title{#1}\def\xmu@entitle{#2}}        % 标题
+\renewcommand{\title}[3][]{%
+    \def\xmu@title{#2}%
+    \def\xmu@entitle{#3}%
+    \ifx\relax#1\relax
+        \def\xmu@subtitle{}% 如果未提供 subtitle，则设为空
+    \else
+        \def\xmu@subtitle{#1}%
+    \fi
+}
 \renewcommand{\author}[1]{\def\xmu@author{#1}}                          % 作者
 \newcommand{\idn}[1]{\def\xmu@idn{#1}}                                  % 学号
 \newcommand{\college}[1]{\def\xmu@college{#1}}                          % 学院
@@ -124,6 +133,16 @@
         }
         \vskip 2em
         \sf\zihao{2}\mdseries\xmu@title
+        \ifx\relax\xmu@subtitle\relax\else
+    \vskip 0.5em
+    {\hfill
+    \begin{minipage}{0.6\textwidth}
+        \raggedleft
+        \zihao{4}\itshape % 字号四号 + 斜体
+        \xmu@subtitle
+    \end{minipage}
+    }
+\fi
         \vskip 1ex
         \bf\zihao{3}\xmu@entitle
         \vskip 2em
