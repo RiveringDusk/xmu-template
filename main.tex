@@ -6,15 +6,15 @@
 
 \print % 电子版 / 打印版（打印版将在某些偶数页产生空白页）
 \design % 毕业设计 / 毕业论文（取消注释即为毕业设计）
-\title[——报告生成模块]{某科技政策数据分析系统}{A Science and Technology Policy Data Analysis System}
+\title[——报告生成模块]{某科技政策数据分析系统设计与实现}{A Science and Technology Policy Data Analysis System Design and Implementation}
 \author{周淡茗}
 \idn{22920212204505}
 \college{信息学院}
 \subject{软件工程}
 \grade{2021级}
-\teacher{王美红\; 教授}
+\teacher{林坤辉\; 教授}
 \pubdate{二〇二五年四月三十日}
-\keywords{中文关键词}{Java Vue3 前后端分离的Web项目}
+\keywords{Java Vue3 前后端分离的Web项目}{Java Vue3}
 
 % 封面、承诺书
 
@@ -23,13 +23,18 @@
 % 中文摘要
 
 \begin{abstract}
-本系统囊括了信息情报搜集，数据存储，数据检索与分析和智能报告生成与推送四个部分。本人负责其中的智能报告生成与推送的部分，其中主要负责前端开发，其包括了几个增删改查的功能，以及对话式推进报告生成的前端设计。
+% 本系统囊括了信息情报搜集，数据存储，数据检索与分析和智能报告生成与推送四个部分。本人负责其中的智能报告生成与推送的部分，其中主要负责前端开发，其包括了几个增删改查的功能，以及对话式推进报告生成的前端设计。
+\par 本系统是一个集信息情报搜集、数据存储、数据检索与分析以及智能报告生成与推送于一体的综合型信息管理系统。系统旨在实现对多源数据的采集与整合，并通过智能化手段辅助用户进行数据分析与决策支持。
+\par 在系统架构方面，采用了前后端分离的设计模式，后端依托数据库技术与数据分析算法完成数据处理任务，前端则注重用户体验与交互逻辑的设计与实现。本人主要负责“智能报告生成与推送”模块的开发工作，重点完成了该模块的前端部分设计与功能实现。实现了报告生成流程中的基本数据操作功能的增删改查；其次，基于对话式交互设计理念，构建了引导用户逐步完成报告生成的界面流程，提升了系统的易用性与交互体验；最后，通过接口调用与后端进行数据通信，确保数据的实时获取与展示。
 \end{abstract}
 
 % 英文摘要
 
 \begin{enabstract}
-The system consists of four core modules: information gathering, data storage, data retrieval and analysis, and intelligent report generation and delivery. My role focused on the intelligent report generation and delivery component, where I was mainly responsible for front-end development. This included building user interfaces for common operations such as creating, reading, updating, and deleting content, as well as designing a conversational UI to guide users interactively through the report generation process.
+% The system consists of four core modules: information gathering, data storage, data retrieval and analysis, and intelligent report generation and delivery. My role focused on the intelligent report generation and delivery component, where I was mainly responsible for front-end development. This included building user interfaces for common operations such as creating, reading, updating, and deleting content, as well as designing a conversational UI to guide users interactively through the report generation process.
+This system is an integrated information management platform that combines information collection, data storage, data retrieval and analysis, as well as intelligent report generation and push functionalities. The system aims to collect and integrate multi-source data, and assist users in data analysis and decision-making through intelligent methods.
+\par In terms of system architecture, a front-end and back-end separation design pattern was adopted. The back-end relies on database technology and data analysis algorithms to handle data processing tasks, while the front-end focuses on user experience and the design and implementation of interactive logic. I was primarily responsible for the development of the "intelligent report generation and push" module, with a focus on the front-end design and functional implementation of this component.
+Specifically, the front-end development includes the implementation of basic data operations such as create, read, update, and delete (CRUD) functions in the report generation process. Additionally, based on a conversational interaction design concept, I built an interface workflow that guides users step-by-step through report generation, significantly improving the system’s usability and user experience. Finally, by invoking APIs, the front-end communicates effectively with the back-end to ensure real-time data retrieval and display.
 \end{enabstract}
 
 % 目录
@@ -42,13 +47,14 @@ The system consists of four core modules: information gathering, data storage, d
 \xmusection{项目背景}{Research Background and Significance}
 科技领域的快速发展和政策环境的日益复杂，使得针对科技领域政策论证的研究需要应对海量且多样化的数据资源。传统的信息收集和分析方法已不足以支撑迅速变化的政策论证需求，迫切需要一个集成多模态数据采集、存储、分析及智能报告生成的综合系统，以高效支持科技政策的信息管理和科学决策。科技发展政策论证数据库软件应运而生，旨在通过自动化的多源数据采集和深度分析，实现政策信息的全面覆盖和智能化处理。平台将支持文本、语音、图片、视频等多种形式的数据集成，通过定制化的爬虫技术，实现多模态数据的高效采集与管理，并提供实时监控和可视化分析功能，以保证数据获取的全面性和精确性。
 
-\par 科技发展政策论证数据库软件系统应具备大规模数据采集、存储和分析能力，能够采集包括中国、美国、英国、欧盟、日本、韩国、澳大利亚、加拿大、俄罗斯等国家和地区，涉及但不限于脑与认知、脑机接口、全球军事医学地理、核化生武器损伤医学防护、伤病救治、环境作业医学、仿生医学等相关方向的科技相关政策数据，并支持高效管理和存储百万级别的多模态数据，同时提供灵活的数据清洗、编辑和导入导出操作。通过分布式存储架构和先进的数据处理技术，系统确保数据处理的快速响应和存储的高效利用。此外，系统将利用自然语言处理和数据增强技术，对数据进行预处理和深度分析，为科技政策研究提供更高质量的基础数据。
+\par 科技发展政策论证数据库软件系统应具备大规模数据采集、存储和分析能力，能够采集包括多个国家和地区，支持高效管理和存储百万级别的多模态数据，同时提供灵活的数据清洗、编辑和导入导出操作。通过分布式存储架构和先进的数据处理技术，系统确保数据处理的快速响应和存储的高效利用。此外，系统将利用自然语言处理和数据增强技术，对数据进行预处理和深度分析，为科技政策研究提供更高质量的基础数据。
 
-\par 为提升政策分析的深度，科技发展政策论证数据库软件系统将集成科技领域的大语言模型，具备可解释性和智能推理能力。通过提示工程和思维链技术，系统能够基于领域特性精准回答复杂问题，并支持多用户交互，为政策研究人员提供智能化的知识推理和问题解答功能。大语言模型的高效部署方案确保系统在内网环境中的安全运行。系统还具备智能报告生成和推送功能，支持根据用户自定义策略自动生成报告，并通过大语言模型辅助生成专业的报告框架和内容。用户可在系统中灵活修订报告，并根据需求选择多种推送方式，确保信息传递的及时性和针对性。
+\par 为提升分析的深度，软件系统集成相关领域的大语言模型，具备可解释性和智能推理能力。通过提示工程和思维链技术，系统能够基于领域特性精准回答复杂问题，并支持多用户交互，为政策研究人员提供智能化的知识推理和问题解答功能。大语言模型的高效部署方案确保系统在内网环境中的安全运行。系统还具备智能报告生成和推送功能，支持根据用户自定义策略自动生成报告，并通过大语言模型辅助生成专业的报告框架和内容。用户可在系统中灵活修订报告，并根据需求选择多种推送方式，确保信息传递的及时性和针对性。
 
-\par 科技发展政策论证数据库软件系统的推出，将显著提升政策研究的效率与准确性，为政策制定提供系统化的支持。通过集成前沿的数据处理技术和大语言模型，将为科技领域的政策分析、推理和决策提供创新的解决方案，助力科学决策和研究的高效推进。
+\par 科技发展政策论证数据库软件系统的推出，将显著提升政策研究的效率与准确性，为政策制定提供系统化的支持。通过集成前沿的数据处理技术和大语言模型，将为政策分析、推理和决策提供创新的解决方案，助力科学决策和研究的高效推进。
 
 \par 针对本模块，系统将支持对用户自定义的策略进行增删改查管理，可支持多个的报告策略模板；支持基于用户自定义策略的自动报告生成；支持基于大语言模型的报告框架自动生成，利用大语言模型自动生成专业报告框架，支持用户对该框架进行编辑修订管理，支持综合自动生成和用户自定义模式集成智能生成报告框架；支持基于大语言模型的报告内容自动生成，支持针对框架中各个分项构建提示工程和思维链，自动生成分项报告详细内容；支持用户对所生成的报告内容进行修订；根据用户要求，支持有邮件服务器推送和无邮件服务器推送两种数据推送模式，支持进行多用户推送。
+
 \xmusection{论文组织结构}{Thesis Organization Structure}
 本文按照研究的内容和逻辑顺序分为以下几个部分：
 
@@ -61,7 +67,7 @@ The system consists of four core modules: information gathering, data storage, d
 第三章 系统需求分析（System Requirements Analysis）
 本章通过对业务需求、功能性需求（如增删改查功能和对话式流程引导）以及非功能性需求（如性能、安全性等）的深入分析，明确了报告管理模块的具体要求。这些需求分析为后续的设计与实现提供了指导依据，确保系统能够满足实际业务的需求。
 
-第四章 系统详细设计（System Detailed Design）
+第四章 系统设计（System Detailed Design）
 在需求分析的基础上，本章进行了系统总体架构设计和核心模块设计。具体而言，涵盖了总体架构设计、增删改查模块的设计以及对话式流程引导模块的设计等内容。此外，还涉及了安全设计方面的考量，旨在构建一个既高效又安全的报告管理系统。
 
 第五章 系统实现（System Implementation）
@@ -73,11 +79,31 @@ The system consists of four core modules: information gathering, data storage, d
 第七章 总结与展望（Conclusion and Outlook）
 最后，本章总结了本文的主要研究成果，并指出了当前系统存在的不足之处及未来可能的改进方向。此外，还对未来的工作进行了展望，讨论了该系统在其他应用场景中的潜力和发展前景。
 
+\xmusection{国内外研究现状}{Research Status at Home and Abroad}
+
+\subsection{国内研究现状}{Domestic Research Status}
+近年来，随着信息技术的发展，国内在信息管理系统的设计与实现方面取得了显著进展。许多高校和企业开发的信息系统主要集中在数据采集、存储和初步分析上。例如，一些地方政府部门采用的信息平台实现了多源数据的整合与展示，但这些系统通常依赖传统的表单操作进行交互，缺乏智能化的数据处理能力。此外，尽管有一些尝试将人工智能技术应用于信息管理系统的案例，但在智能报告生成与个性化推送方面的应用仍处于探索阶段。特别是在前端设计中，用户体验和界面友好性仍有较大的提升空间。
+
+\subsection{国外研究现状}{International Research Status}
+国外在智能信息系统的研究与开发方面起步较早，并且在利用先进的人工智能技术和人机交互设计方面积累了丰富的经验。例如，IBM Watson 和 Google Cloud 的自然语言处理(NLP)服务已经能够支持复杂的文本分析和自动报告生成功能。微软的 Power BI 等工具也展示了强大的数据分析能力和直观的用户界面设计。这些系统不仅提供了高效的数据处理能力，还通过先进的前端框架和组件库增强了用户体验。然而，这些解决方案往往需要较高的成本和技术门槛，限制了其广泛应用。
+
+\subsection{对比分析}{Compare Analysis}
+总体来看，国外的系统在智能化程度、自动化水平和用户体验方面具有一定的优势，而国内系统则在本地化适配和业务流程优化方面展现出独特的优势。但是，在集成现代前端框架（如 Vue.js）、UI 组件库（如 Element UI）和后端微服务架构（如 Spring Boot）的同时，结合先进的AI技术以实现更加智能的数据处理和报告生成，仍然存在较大的发展空间。特别是如何有效地整合AI大模型，以提高信息系统的智能化水平和决策支持能力，是当前研究的一个热点方向。
+
+\xmusection{论文主要研究内容}{Main Content}
+为实现此系统，系统采用前后端分离架构，后端基于 Spring Boot 框架构建 RESTful API 接口，完成数据存储、业务逻辑处理与AI接口集成；前端采用 Vue 3 结合 Element UI 组件库，实现高交互性的用户界面。整个系统划分为四个主要模块：信息情报采集模块、数据存储与管理模块、数据检索与分析模块、以及智能报告生成与推送模块。
+\par 本人主要负责“智能报告生成与推送”模块的设计与开发，具体研究内容如下：
+\par 1、功能设计方面：实现了报告生成流程中的基础数据操作功能，包括新增、查询、修改与删除等功能；同时，基于对话式交互设计理念，设计了一套引导用户逐步完成报告生成的交互流程，提升了用户的使用便捷性与系统智能化程度。
+\par 2、前端技术实现方面：采用 Vue 3 构建响应式页面结构，利用组件化思想提升代码复用率与可维护性；通过 Element UI 快速搭建美观且交互良好的界面组件；并通过 Axios 实现与后端的数据通信，确保数据实时展示与更新。
+\par 3、AI大模型的应用方面：在报告生成过程中，引入了预训练的大语言模型作为辅助工具，根据用户输入的关键词与上下文信息，自动生成初步报告草稿，大幅减少人工编写时间，提高了报告输出效率与质量。
+%%%
 % 第二部分： 系统技术架构总括
 % 包括： 前后端技术选型
 % 
 % 
 \xmuchapter{系统相关技术与理论基础}{System-related Technologies and Theoretical Foundations}
+% 第二章 导言
+本章围绕系统开发所采用的核心技术进行详细介绍。首先介绍前端开发框架的选型依据，重点阐述 Vue 3 框架的优势及其在构建高交互性界面中的应用；接着从后端开发角度出发，分别说明编程语言与 Spring Boot 框架的选型理由，并分析 MySQL 数据库在本系统中的适用性与优势。通过对各项关键技术的深入分析，为后续系统的架构设计与功能实现提供坚实的技术支撑。
 
 \xmusection{前端技术框架选型}{Front-end Technology Framework}
 
@@ -106,8 +132,8 @@ JavaScript 的核心优势在于其异步编程能力。借助 AJAX 或 Fetch AP
 
 Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报告管理模块的开发，满足系统的功能性需求和用户体验要求。
 
-\xmusection{后端技术选型}{Back-end Technology and API Design}
-\xmusubsection{编程语言及框架选型}{Back-end Technology Selection}
+\xmusection{后端技术选型}{Back-end Technology}
+\xmusubsection{编程语言及框架选型}{Selection of Programming Language and Framework}
 后端技术负责处理业务逻辑、数据存储和与前端的交互。简单来说，Java语言拥有如下特性：
 
 1. 平台无关性
@@ -131,7 +157,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 7.Spring 框架
 \par Spring Boot\cite{springboot1}是一个简化Spring应用开发的框架，它通过自动配置和起步依赖（starters）极大地减少了项目的配置工作，并且内置了Servlet容器支持（如Tomcat），使得部署更加简便。它不仅提高了开发效率，还提供了诸如健康检查、度量(metrics)收集等生产就绪功能，帮助开发者快速构建稳定可靠的Java应用程序。Spring Boot非常适合用于构建微服务架构中的各个服务，同时也能很好地适应传统的单体应用开发。其灵活而强大的特性，使它成为现代Java开发中不可或缺的工具之一。\cite{springboot2}
 
-\xmusubsection{数据库系统选型}{Back-end Technology Selection}
+\xmusubsection{数据库系统选型}{Selection of Database}
 在数据库选型方面，MySQL与PostgreSQL都是免费、开源、强大、且功能丰富的数据库。MySQL 是一个成熟的关系型数据库，广泛用于各种规模的应用，能够有效地处理百万级别的数据\cite{mysql1}。其支持 ACID 特性，保证数据一致性、隔离性、持久性，并且拥有强大的查询和索引优化能力。而可靠性是PostgreSQL的最高优先级。它以坚如磐石的品质和良好的工程化而闻名，支持高事务、任务关键型应用。PostgreSQL的文档非常精良，提供了大量免费的在线手册，还针对旧版本提供了归档的参考手册。PostgreSQL拥有强大的社区支持，还有来自于独立厂商的商业支持。数据一致性与完整性也是PostgreSQL的高优先级特性。PostgreSQL是完全支持ACID特性，对于数据库访问提供了强大的安全性保证。介于以下几点原因，本项目选择MySQL作为数据库。
 
 (1)性能优化
@@ -159,7 +185,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 %\xmusubsection{常见的流程具象化实现方式}{Common Process Visualization Implementation Methods}
 %正文内容。
 
-\xmusection{本章小结}{Summary of This Chapter}
+\xmusection{本章小结}{Summary}
 通过综合考虑前端和后端的技术特点，我们选择了最适合本项目的开发工具和技术栈。前端采用 Vue3 框架，结合 HTML、CSS 和 JavaScript，提供了高效的开发体验和优秀的用户体验；后端选用 Java 语言和 Spring Boot 框架，并结合 MySQL 数据库，确保了系统的高效性、稳定性和可扩展性。这些技术选型不仅满足了当前项目的需求，也为未来的功能扩展和性能优化奠定了坚实的基础。
 
 接下来的章节将深入探讨系统的需求分析、详细设计、实现以及测试验证等内容，进一步展示如何利用这些技术构建一个功能完善、性能优越的报告管理模块。
@@ -169,8 +195,10 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 % 
 % 
 \xmuchapter{模块需求分析}{System Requirements Analysis}
+% 第三章导言
+在系统开发过程中，明确功能定位与用户需求是确保系统实用性和可扩展性的关键环节。本章围绕“智能报告生成与推送”模块展开详细的需求分析，首先介绍系统的整体业务背景与应用场景，随后从功能性需求出发，分别对用户自定义策略管理、报告框架自动生成以及报告生成等核心功能进行细化说明。同时，结合系统实际运行环境，提出相应的非功能性需求。通过本章分析，为后续系统的架构设计与功能实现提供明确的方向与依据。
 \xmusection{业务需求}{Business Requirements}
-系统整体需求拆分如下图所示：
+系统整体需求拆分如图3-1所示：
 
 \begin{figure}[!htb]
     \centering
@@ -179,37 +207,86 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 \end{figure}
 
 为了拆分出大模型和报告模块，降低系统耦合度，系统拆分出了此模块。
-系统将支持对用户自定义的策略进行增删改查管理，可支持多个的报告策略模板；支持基于用户自定义策略的自动报告生成；支持基于大语言模型的报告框架自动生成，利用大语言模型自动生成专业报告框架，支持用户对该框架进行编辑修订管理，支持综合自动生成和用户自定义模式集成智能生成报告框架；支持基于大语言模型的报告内容自动生成，支持针对框架中各个分项构建提示工程和思维链，自动生成分项报告详细内容；支持用户对所生成的报告内容进行修订；根据用户要求，支持有邮件服务器推送和无邮件服务器推送两种数据推送模式，支持进行多用户推送。
-\xmusection{功能性需求}{Functional Requirements}
-本模块需求拆分如下：
+\par 1、系统将支持对用户自定义的策略进行增删改查管理，可支持多个的报告策略模板；
+\par 2、支持基于用户自定义策略的自动报告生成；
+\par 3、支持基于大语言模型的报告框架自动生成，利用大语言模型自动生成专业报告框架；
+\par 4、支持用户对该框架进行编辑修订管理，支持综合自动生成和用户自定义模式集成智能生成报告框架；
+\par 5、支持基于大语言模型的报告内容自动生成，支持针对框架中各个分项构建提示工程和思维链，自动生成分项报告详细内容；
+\par 6、支持用户对所生成的报告内容进行修订；
+\par 7、支持有邮件服务器推送和无邮件服务器推送两种数据推送模式，支持进行多用户推送。
+
+\xmusection{系统数据流分析}{Core Module Design}
+为梳理需求，整理出本模块的数据流示意图如下：
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=24em]{need1.png}
-    \caption{模块需求分析}
+    \includegraphics[width=36em]{dataflow.png}
+    \caption{数据流示意图}
 \end{figure}
 
-以下对部分需求进行拆解：
-\xmusubsection{用户自定义策略管理}{CRUD Functionality}
-系统将支持对用户自定义的策略进行增删改查管理，可支持多个的报告策略模板。自定义策略用以配合报告生成，持久化报告策略利于用户直接选取已有策略进行分析。
-\xmusubsection{报告框架自动生成}{CRUD Functionality}
-利用大语言模型自动生成专业报告框架，支持用户对该框架进行编辑修订管理，支持综合自动生成和用户自定义模式集成智能生成报告框架。
-\xmusubsection{报告生成}{CRUD Functionality}
-经过几个可选的流程，如选择框架，选择关键词，选择提示词，上传文件后用户可点击按钮生成报告。
+用户输入自定义的报告策略，系统负责管理多个报告策略模板。如图第一层，数据由用户自定义的策略流入，传入给大模型生成报告后进入持久化层。大语言模型自动生成报告框架后，并依据该框架和用户的需求以及大模型提示词自动填充详细内容，在此过程中用户有权对自动生成的报告内容进行修订。修订完成后的报告（包括初始生成和用户修订的版本）被存储在数据库中。从下方向上的思维链可以对最终生成的报告进行验证，确保大模型生成内容的准确性。系统通过推送机制将报告发送给用户。此模块的数据存储主要用于保存报告策略模板、生成的报告框架以及最终的报告内容，后续工程还将思维链验证一并加入存储。
+\xmusection{功能性需求}{Functional Requirements}
+% 本模块需求拆分如下：
+
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics[width=24em]{need1.png}
+%     \caption{模块需求分析}
+% \end{figure}
+
+% 以下对部分需求进行拆解：
+\xmusubsection{用户自定义策略管理}{User-defined Strategy Management}
+系统支持对用户自定义的报告生成策略进行增删改查（CRUD）操作，允许用户创建并保存多个策略模板。这些策略包括但不限于：关键词提取规则、数据筛选条件、报告风格偏好、输出格式设置等。
+该功能的核心目标是为用户提供灵活的配置选项，使其能够根据不同的业务场景快速选择或调整报告生成逻辑。通过将策略持久化存储于数据库中，用户可在后续操作中直接调用已有策略，无需重复设置，从而提高工作效率与使用便捷性。
+在交互设计上，前端界面提供表单填写与可视化编辑功能，后端则通过 Spring Boot 接口完成数据持久化处理。此外，系统还支持策略版本管理，便于用户回溯历史配置。
+
+\xmusubsection{报告框架自动生成}{Automatic Report Framework Generation}
+% 利用大语言模型自动生成专业报告框架，支持用户对该框架进行编辑修订管理，支持综合自动生成和用户自定义模式集成智能生成报告框架。
+本模块利用大语言模型（LLM）技术，结合用户输入的关键词、主题方向及上下文信息，自动生成结构清晰、逻辑完整、格式规范的专业报告框架。系统不仅支持完全由 AI 自动生成框架，也允许用户基于生成结果进行手动编辑与优化，形成“AI辅助 + 用户定制”的混合模式。
+生成的报告框架涵盖封面、目录、摘要、正文章节、图表说明等标准组成部分，适用于多种行业和应用场景。用户可通过拖拽式组件对框架结构进行灵活调整，并将常用模板保存为策略供后续复用。
+该功能通过调用本地部署的大模型接口实现智能生成能力，同时前端采用 Vue 3 + Element UI 构建良好的交互体验，确保用户能高效地完成报告结构设计任务。
+
+\xmusubsection{报告生成}{Report Generation}
+% 经过几个可选的流程，如选择框架，选择关键词，选择提示词，上传文件后用户可点击按钮生成报告。
+报告生成功能是本模块的核心环节，用户可通过一系列可选流程最终生成完整的分析报告。具体流程包括：选择报告框架（AI生成或用户自定义）、输入关键词、选择提示词模板、上传相关文件（如PDF、Excel等），随后点击“生成”按钮触发报告构建流程。
+系统将上述参数传递至后端服务，调用 AI 大模型进行内容填充与逻辑组织，最终生成结构化文档（如 Word、PDF）。整个过程支持进度显示与异常提示，确保用户清楚当前状态。
+此外，系统还提供生成内容的预览与微调功能，用户可在正式导出前对报告内容进行局部修改，增强个性化表达能力。所有生成记录也将被保存，便于后续查阅与复用。
+
+报告生成需按阶段一系列流程，包括但不限于框架选择，策略选择，提示选择，思维链验证,图3-3到3-5展示生成流程：
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=45em]{flowchart2.png}
+    \caption{报告生成流程图 - 1}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=45em]{flowchart3.png}
+    \caption{报告生成流程图 - 2}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=45em]{flowchart4.png}
+    \caption{报告生成流程图 - 3}
+\end{figure}
+
 \xmusection{非功能性需求}{Non-functional Requirements}
-在非功能需求方面，本子模块的设计需要重点考虑性能、可靠性、安全性及易用性等多个维度。首先，系统必须具备良好的性能表现，即使在高并发场景下也需保持快速响应和稳定运行，确保用户体验不受影响。其次，系统的可靠性至关重要，需通过合理的架构设计避免单点故障，确保服务的高可用性和数据的一致性。在安全性方面，系统应对数据传输过程采用加密技术，保护用户的隐私和敏感信息，并严格控制用户访问权限，防止未经授权的操作。此外，考虑到未来可能的功能扩展和技术升级，系统的设计应具备良好的可扩展性，以便于后续添加新功能或适应业务增长需求。最后，界面设计应尽量简洁直观，减少用户的学习成本，提高操作便捷性，从而为用户提供流畅的使用体验。正文内容。
+在非功能需求方面，本子模块的设计需要重点考虑性能、可靠性、安全性及易用性等多个维度。首先，系统必须具备良好的性能表现，即使在高并发场景下也需保持快速响应和稳定运行，确保用户体验不受影响。其次，系统的可靠性至关重要，需通过合理的架构设计避免单点故障，确保服务的高可用性和数据的一致性。在安全性方面，系统应对数据传输过程采用加密技术，保护用户的隐私和敏感信息，并严格控制用户访问权限，防止未经授权的操作。此外，考虑到未来可能的功能扩展和技术升级，系统的设计应具备良好的可扩展性，以便于后续添加新功能或适应业务增长需求。最后，界面设计应尽量简洁直观，减少用户的学习成本，提高操作便捷性，从而为用户提供流畅的使用体验。
 
-\xmusection{本章小结}{Summary of This Chapter}
-本章详细阐述了报告生成子模块的需求分析，包括背景介绍、目标设定、功能需求及非功能需求。通过将大模型与报告生成模块从主系统中拆分出来，我们旨在降低系统的耦合度，同时提升模块的灵活性和扩展性。本子模块的核心目标是为用户提供高效、灵活且专业的报告生成服务，支持用户自定义策略的管理，并利用大语言模型技术实现报告框架和内容的智能生成。此外，系统还提供了强大的编辑修订功能，确保最终报告能够满足用户的特定需求。在数据推送方面，系统支持基于邮件服务器和无邮件服务器的两种模式，以适应不同的应用场景和用户需求。
+\xmusection{本章小结}{Summary}
+\par 本章详细阐述了报告生成子模块的需求分析，包括背景介绍、目标设定、功能需求及非功能需求。通过将大模型与报告生成模块从主系统中拆分出来，我们旨在降低系统的耦合度，同时提升模块的灵活性和扩展性。本子模块的核心目标是为用户提供高效、灵活且专业的报告生成服务，支持用户自定义策略的管理，并利用大语言模型技术实现报告框架和内容的智能生成。此外，系统还提供了编辑修订功能，确保最终报告能够满足用户的特定需求。在数据推送方面，系统支持基于邮件服务器和无邮件服务器的两种模式，以适应不同的应用场景和用户需求。为了确保系统的成功实施，设计过程中重点关注了性能、可靠性、安全性和易用性等非功能需求，力求在高并发情况下保持系统的稳定性和响应速度，保障数据的安全与一致性，同时提供简洁直观的用户界面，以减少用户的学习成本并提高操作便捷性。
 
-为了确保系统的成功实施，我们在设计过程中特别关注了性能、可靠性、安全性和易用性等非功能需求，力求在高并发情况下保持系统的稳定性和响应速度，保障数据的安全与一致性，同时提供简洁直观的用户界面，以减少用户的学习成本并提高操作便捷性。综上所述，本章不仅明确了报告生成子模块的功能和技术要求，也为后续的设计与实现奠定了坚实的基础。
-
+\par 数据流层面，我们详细描述了报告生成模块的数据流，展示了从用户输入自定义报告策略到最终生成并存储报告的全过程。该模块不仅能够自动化生成报告框架，还能根据用户的修订进行调整，确保报告的准确性和实用性。数据层采用MySQL和Redis进行数据存储和缓存，这些技术在国内云服务平台中也有广泛支持，进一步提升了系统的性能和可靠性。
 
 % 第四部分： 模块概要设计
 % 
 % 
 % 
-\xmuchapter{模块概要设计}{System Detailed Design}
+\xmuchapter{系统概要设计}{System Detailed Design}
+% 第四章 导语
+在完成前期需求分析与功能规划的基础上，系统进入概要设计阶段，旨在从整体架构和技术选型上明确系统的实现路径。本章围绕系统的分层结构、关键技术栈及其国产化适配能力进行详细阐述，涵盖了从前端界面到后端服务、从数据存储到接口通信的全方位设计思路，为后续的详细开发与部署实施提供坚实的技术支撑。
 \xmusection{系统架构设计}{Overall Architecture Design}
 系统整体后端架构如下：
 
@@ -238,29 +315,20 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 
 系统构建过程中采用的 Vite 和 TypeScript 等工具，均支持在国产开发环境中进行构建和调试，确保开发过程的兼容性。
 前端的 Vue.js 技术栈和相关插件（如 Vue-Router、Pinia 等）也能够在国产环境中顺利运行。
-\xmusection{数据流分析}{Core Module Design}
-本模块的数据流示意图如下：
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=36em]{dataflow.png}
-    \caption{数据流示意图}
-\end{figure}
-
-用户输入自定义的报告策略，系统负责管理多个报告策略模板。如图第一层，数据由用户自定义的策略流入，传入给大模型生成报告后进入持久化层。大语言模型自动生成报告框架后，并依据该框架和用户的需求以及大模型提示词自动填充详细内容，在此过程中用户有权对自动生成的报告内容进行修订。修订完成后的报告（包括初始生成和用户修订的版本）被存储在数据库中。从下方向上的思维链可以对最终生成的报告进行验证，确保大模型生成内容的准确性。系统通过推送机制将报告发送给用户。此模块的数据存储主要用于保存报告策略模板、生成的报告框架以及最终的报告内容，后续工程还将思维链验证一并加入存储。
 
 在整个系统中，报告生成模块承接上游数据内容，相当于系统的输出。系统通过从多个原始数据源收集数据，并将其存储在数据库中。用户可以通过输入关键字，从数据库中检索并分析所需数据，然后系统会根据分析结果生成详细的报告，为国防科技领域的研究和决策提供支持。整个过程体现了数据驱动，从数据收集、存储、分析到最终的报告生成，形成一个完整的闭环。
 \xmusection{本章小结}{Summary of This Chapter}
-在本章中，我们详细探讨了系统的整体架构设计和核心模块的数据流分析，为后续的详细设计和系统实现打下基础。
+在本章中，我们详细探讨了系统的整体架构设计，为后续的详细设计和系统实现打下基础。
 \par 系统架构设计层面里，我们明确了系统的整体架构，包括客户端、前端网关、后端网关、微服务层和数据层的分层结构。通过引入Spring Boot和Spring Cloud Gateway等技术，确保了系统的可扩展性和稳定性。前端采用了现代化的Web技术栈（如Vue.js和Vite），这些技术不仅在主流操作系统中广泛应用，也在国产操作系统及其配套浏览器中得到了支持，保证了系统的兼容性。系统前后端通过标准的HTTPS协议进行数据传输，并使用RESTful API进行接口设计，符合数据中心的接口规范，确保与现有系统的无缝对接。
-\par 数据流层面，我们详细描述了报告生成模块的数据流，展示了从用户输入自定义报告策略到最终生成并存储报告的全过程。该模块不仅能够自动化生成报告框架，还能根据用户的修订进行调整，确保报告的准确性和实用性。数据层采用MySQL和Redis进行数据存储和缓存，这些技术在国内云服务平台中也有广泛支持，进一步提升了系统的性能和可靠性。
 
 
 % 第五部分： 模块详细设计
 % 
 % 
 % 
-\xmuchapter{模块详细设计}{System Detailed Design}
+\xmuchapter{模块设计}{System Design}
+% 第五章 导语
+在完成系统整体架构设计的基础上，为进一步细化系统的功能实现方式，本章将围绕核心模块展开详细设计。通过模块类图、交互图、数据库结构及API接口的设计说明，明确各组件的功能职责与协作关系，确保系统在可维护性、可扩展性和数据一致性方面具备良好的表现。本章内容将为开发阶段提供具体指导，并为前后端协同开发奠定技术基础。
 % \xmusection{总体架构设计}{Overalld Architecture Design}
 % 本模块承接需求如下
 % \begin{table}[!htb]
@@ -324,7 +392,7 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 \xmusection{模块交互图}{interface}
 为实现高效的报告处理，允许用户自定义报告结构，后端使用Spring Boot实现报告生成引擎和任务调度功能，数据处理则依赖于集成的数据清洗与转换工具，确保生成的报告数据准确、完整。此外，系统将利用云存储技术对生成的报告文件进行高效管理和检索，确保用户可以随时访问所需的报告和相关数据。
 
-\xmusubsection{用户自定义策略模板管理}{english ver}
+\xmusubsection{用户自定义策略模板管理}{User-defined Strategy Template Management}
 
 \par 此模块允许用户创建和编辑报告模板，以满足不同场景和需求的报告生成。根据用户的需求定制报告模板，报告模板定制模块是智能报告生成系统中的核心功能之一，它提供了一个灵活的界面，允许用户根据特定需求定制报告模板。这一模块的设计旨在提高报告的个性化和专业性，使用户能够生成符合特定业务需求和审美标准的报告。其中包括
 \par 模板选择：提供多种预设模板供用户选择，包括不同的布局、颜色方案和字体样式。
@@ -343,7 +411,7 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 \par 数据处理模块： 作为系统的数据中枢，该模块负责从多种数据源抽取、转换和加载数据，为报告生成提供必要的数据支持，通过灵活的数据处理策略，确保了数据的准确性和及时性，满足不同报告模板的数据需求。
 \par API服务模块：提供RESTful API接口，供前端调用以实现用户界面的各种功能。关键特性：路由管理： 定义清晰的API路由，使得前端可以轻松地与后端通信。请求处理： 处理来自前端的请求，并返回相应的数据或操作结果。
 
-\xmusubsection{用户自定义策略报告生成}{englishiver}
+\xmusubsection{用户自定义策略报告生成}{Report Generation Based on User-defined Strategy }
 用户自定义专业报告生成模块是智能报告生成模块的核心功能之一，旨在为用户提供一个灵活的系统，以创建高度定制化的报告。该模块允许用户选择或设计模板、输入或上传数据、配置报告参数，并最终生成专业的报告文档。这些报告可以用于内部分析、客户展示或公开发布，支持多种格式，如PDF、Excel、Word等，图5-3为本部分时序交互图。
 
 
@@ -358,7 +426,7 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 \par 任务调度与监控模块功能描述。 任务调度与监控模块负责管理报告生成的计划任务和后台作业。它支持定时生成报告、监控报告生成状态和优化资源分配。定时任务： 使用定时任务调度器（如Quartz）来安排定期的报告生成任务。后台处理： 支持后台数据处理和报告生成，提高系统响应性和用户体验。性能监控： 监控系统性能和资源使用情况，如CPU、内存和磁盘使用率，确保系统稳定运行。
 
 
-\xmusubsection{基于大语言模型的报告框架及内容自动生成}{english ver}
+\xmusubsection{基于大语言模型的报告框架及内容自动生成}{Automatic Outline and Content Generation Based on LLM}
 智能报告生成模块基于数据增强和大语言模型，利用提示工程和思维链构建技术，自动生成领域专业报告。系统将分析用户输入及相关数据，自动完成内容生成。此功能不仅提升了报告的质量，还能根据历史数据和用户行为进行学习，持续优化生成结果。本模块时序图如图5-4所示
 
 \begin{figure}[!htb]
@@ -373,7 +441,7 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 \par 任务调度模块功能：用于管理报告生成的时间和频率，确保用户能够按需获取最新的报告。
 \par 文件存储与检索模块功能：负责管理系统中所有报告文件和相关数据文件的存储和检索，确保用户可以方便地访问所需文件。
 
-\xmusubsection{用户推送}{english ver}
+\xmusubsection{用户推送}{User Push}
 用户推送模块是智能报告生成系统中的一个关键组成部分，旨在通过实时或定时的方式向用户发送通知和更新。这个模块支持多种推送渠道，包括电子邮件、短信、应用内通知和Webhook等。它允许用户根据个人偏好设置通知选项，确保用户能够在第一时间获取到重要信息和报告更新。本部分时序图如5-5所示：
 
 \begin{figure}[!htb]
@@ -382,32 +450,31 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
     \caption{用户自定义专业报告生成时序图}
 \end{figure}
 
-\par 推送设置：用户可以根据需求设置接收推送的条件和频率，如生成报告后立即推送或定期推送。
-\par 推送渠道：支持多种推送渠道，如邮件、短信和系统内通知，用户可以根据个人偏好选择。
-\par 推送记录：系统将记录每次推送的状态，方便用户进行查询与管理。
+\par 用户可以根据需求设置接收推送的条件和频率，如生成报告后立即推送或定期推送。同时支持多种推送渠道，如邮件、短信和系统内通知，用户可以根据个人偏好选择。系统将记录每次推送的状态，方便用户进行查询与管理。
 
 \xmusection{数据库设计}{Database Design}
 
-\xmusubsection{用户自定义策略管理}{content}
+\xmusubsection{用户自定义策略管理}{User-defined Strategy Management}
 系统应支持对用户自定义的策略进行增、删、改、查的管理功能。每个用户可以创建多个报告策略模板，并且能够对这些模板进行管理（编辑、删除）。
 \begin{table}[!htb]
     \centering
-    \caption{用户自定义策略管理 数据元素组合体表}
+    \caption{用户自定义策略管理\quad 数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
         \bf\songti 序号 & \bf\songti 数据元素组合体名称/标识符 & \bf\songti 集合体类型 & \bf\songti 数据元素序号 \\ \hline
-        1 & 用户自定义策略/CustomStrategy & String & 文本 \\ \hline
-        2 & 数据源/DataSource & String & 文本 \\ \hline
-        3 & 访问权限/AccessPermission & String & 枚举：Public, Internal, Restricted \\ \hline
+        1 & 用户自定义策略/Custom Strategy & String & 文本 \\ \hline
+        2 & 策略描述/Description & String & 文本 \\ \hline
+        3 & 创建时间/Create Time& Date & 时间\\ \hline
+        4 & 访问权限/AccessPermission & String & 枚举：Public, Internal, Restricted \\ \hline
     \end{tabular}
 \end{table}
 
-\xmusubsection{自动报告生成}{content}
+\xmusubsection{自动报告生成}{Automatic Report Generation}
 系统应支持基于用户自定义策略自动生成报告。生成的报告结构化且符合预设的模板。每次自动报告生成的记录应与相应的策略ID进行关联，以便后续查看和分析。报告生成的专业方向需涵盖脑与认知、脑机接口、生物材料、全球军事医学地理、核化生武器损伤医学防护、伤病救治、环境作业医学、仿生医学等相关方向，具体方向由用户指定。
 \begin{table}[!htb]
     \centering
-    \caption{自动报告生成 数据元素组合体表}
+    \caption{自动报告生成\quad 数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
@@ -420,49 +487,51 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
     \end{tabular}
 \end{table}
 
-\xmusubsection{基于大语言模型的报告框架自动生成}{content}
+\xmusubsection{基于大语言模型的报告框架自动生成}{Outline Generation}
 系统应支持利用大语言模型自动生成报告框架，用户可以对该框架进行编辑和修订。系统还应支持综合自动生成和用户自定义模式集成生成报告框架。每个报告框架的生成与修改都应记录操作时间和修改内容，并且可以通过框架ID查看变更历史。
 
 \begin{table}[!htb]
     \centering
-    \caption{基于大语言模型的报告框架自动生成 数据元素组合体表}
+    \caption{框架自动生成\quad 数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
         \bf\songti 序号 & \bf\songti 数据元素组合体名称/标识符 & \bf\songti 集合体类型 & \bf\songti 数据元素序号 \\ \hline
-        1 & 报告框架/Template & String & 文本 \\ \hline
+        1 & 报告框架/Outline & String & 文本 \\ \hline
+        2 & 框架内容/Content & String & 文本 \\ \hline
+        3 & 生成时间/Time & String & 日期：YYYY-MM-DD \\ \hline
     \end{tabular}
 \end{table}
 
 
 
-\xmusubsection{基于大语言模型的报告内容自动生成}{content}
+\xmusubsection{基于大语言模型的报告内容自动生成}{Content Generation}
 系统应支持基于大语言模型自动生成报告的详细内容，用户可以对生成的内容进行修订。此外，系统需支持针对框架中各个分项自动生成分项报告的详细内容，并支持用户根据实际需求对报告内容进行修订和调整。
 
 \begin{table}[!htb]
     \centering
-    \caption{基于大语言模型的报告内容自动生成 数据元素组合体表}
+    \caption{报告生成\quad 数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
         \bf\songti 序号 & \bf\songti 数据元素组合体名称/标识符 & \bf\songti 集合体类型 & \bf\songti 数据元素序号 \\ \hline
         1 & 报告ID/ReportID & String & 文本 \\ \hline
         2 & 用户ID/UserID & String & 文本 \\ \hline
-        3 & 报告标题/Title & String & 文本 \\ \hline
-        4 & 报告内容/Content & String & 文本 \\ \hline
-        5 & 生成时间/Time & String & 日期：YYYY-MM-DD \\ \hline
+        3 & 报告标题/Report Title & String & 文本 \\ \hline
+        4 & 报告内容/Report Content & String & 文本 \\ \hline
+        5 & 生成时间/Generate Time & Date & 日期：YYYY-MM-DD \\ \hline
     \end{tabular}
 \end{table}
 
 
 
-\xmusubsection{数据推送模式}{content}
+\xmusubsection{数据推送模式}{Data Push Model}
 系统应支持两种数据推送模式——有邮件服务器推送和无邮件服务器推送，并兼容常见的邮件服务器类型（如SMTP、POP3）。系统需具备验证邮件服务器配置有效性的功能，以确保邮件推送的稳定性和安全性。
 
 
 \begin{table}[!htb]
     \centering
-    \caption{数据推送模式 数据元素组合体表}
+    \caption{数据推送模式\quad 数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
@@ -473,35 +542,40 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 \end{table}
 
 
-\xmusubsection{提示示例}{content}
+\xmusubsection{提示示例}{Prompts Example}
 系统应提供不少于6个提示示例，帮助用户理解如何进行交互。提供的提示示例必须覆盖常见的使用场景。每个提示示例应简洁明了，便于用户快速理解和应用。每个提示示例应该能够被标识和管理，便于用户查看和修改
 
 \begin{table}[!htb]
     \centering
-    \caption{提示示例数据元素组合体表（简化版）}
+    \caption{提示示例\quad 数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
         \bf\songti 序号 & \bf\songti 数据元素组合体名称/标识符 & \bf\songti 集合体类型 & \bf\songti 数据元素序号 \\ \hline
-        1 & 数据源/DataSource & String & 文本 \\ \hline
-        2 & 访问权限/AccessPermission & String & 枚举：Public, Internal, Restricted \\ \hline
+        1 & 提示ID/ID& String & 文本 \\ \hline
+        2 & 内容/Content & String & 文本\\ \hline
+        3 & 提示阶段/Stage & String & 文本\\ \hline
+        4 & 创建时间/Create Time & Date & 日期：YYYY-MM-DD \\ \hline
     \end{tabular}
 \end{table}
 
 
 
-\xmusubsection{思维链验证}{content}
+\xmusubsection{思维链验证}{Thinking Chains}
 系统应支持不少于4种思维链验证，确保生成的报告内容逻辑清晰，符合要求。思维链验证应能够确保报告中每一部分内容的逻辑合理。系统应能根据思维链验证结果对生成的内容进行调整。每次思维链验证的执行和结果都应记录，并且能够根据需求追溯到具体的报告内容。
 
 \begin{table}[!htb]
     \centering
-    \caption{思维链验证 数据元素组合体表（简化版）}
+    \caption{思维链\quad 数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
         \bf\songti 序号 & \bf\songti 数据元素组合体名称/标识符 & \bf\songti 集合体类型 & \bf\songti 数据元素序号 \\ \hline
-        1 & 数据源/DataSource & String & 文本 \\ \hline
-        2 & 访问权限/AccessPermission & String & 枚举：Public, Internal, Restricted \\ \hline
+        % 1 & 数据源/DataSource & String & 文本 \\ \hline
+        % 2 & 访问权限/AccessPermission & String & 枚举：Public, Internal, Restricted \\ \hline
+        1 & 思维链ID/ID& String & 文本 \\ \hline
+        2 & 思维链内容/Content & String & 文本\\ \hline
+        3 & 创建时间/Create Time & Date & 日期：YYYY-MM-DD \\ \hline
     \end{tabular}
 \end{table}
 
@@ -509,7 +583,7 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 
 
 \xmusection{API设计}{API Design}
-\xmusubsection{报告管理API}{content}
+\xmusubsection{报告管理API}{Report Management API}
 报告管理负责从前端获框架、文件及关键词以生成报告，并且需要将生成的报告存储到数据库中。报告管理API的设计如下：
 \begin{table}[!htb]
     \centering
@@ -526,7 +600,7 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 \end{table}
 
 
-\xmusubsection{报告框架API}{content}
+\xmusubsection{报告框架API}{Report Outline API}
 报告框架可由大模型生成，也可由用户自行输入。所以API需提供框架的增删改查，以及大模型生成框架的保存接口。由于框架由树形结构组成，所以框架的增删改查接口需要支持树形结构的操作。
 \begin{table}[!htb]
     \centering
@@ -539,13 +613,13 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
         GET & /outline/get\_all & {无} & {获取分组的框架树形结构} \\ \hline
         POST & /outline/save\_outline & {生成框架的ID} & {保存大语言模型生成的报告框架} \\ \hline
         POST & /outline/update\_outline\_llm & {框架内容(JSON)} & {更新框架内容(大模型生成部分)} \\ \hline
-        PUT & /outline/{id} & {框架ID、框架内容(JSON)} & {更新框架内容(用户输入部分)} \\ \hline
-        DELETE & /outline/{id} & {框架ID} & {删除指定ID的框架} \\ \hline
+        PUT & /outline/\{id\} & {框架ID、框架内容(JSON)} & {更新框架内容(用户输入部分)} \\ \hline
+        DELETE & /outline/\{id\} & {框架ID} & {删除指定ID的框架} \\ \hline
     \end{tabular}
 \end{table}
 
 
-\xmusubsection{提示示例API}{content}
+\xmusubsection{提示示例API}{Prompts Example API}
 提示示例用于提示用户操作过程的示例，帮助用户理解如何进行交互。提示示例应该能够被用户标识和管理，便于查看和修改。
 \begin{table}[!htb]
     \centering
@@ -557,12 +631,12 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
         GET & /prompts/ & {无} & {获取提示示例列表} \\ \hline
         POST & /prompts & {提示示例JSON} & {创建提示示例} \\ \hline
         GET & /prompts/stage/{stage} & {阶段ID} & {业务需要，根据阶段获取提示列表} \\ \hline
-        PUT & /prompts/{id} & {提示内容(JSON)} & {更新提示内容} \\ \hline
-        DELETE & /prompts/{id} & {提示ID} & {删除指定ID的提示} \\ \hline
+        PUT & /prompts/\{id\} & {提示内容(JSON)} & {更新提示内容} \\ \hline
+        DELETE & /prompts/\{id\} & {提示ID} & {删除指定ID的提示} \\ \hline
     \end{tabular}
 \end{table}
 
-\xmusubsection{报告生成策略API}{content}
+\xmusubsection{报告生成策略API}{Report Generation Strategy API}
 报告生成策略用以管理用户自定义的策略，支持对用户自定义策略进行增删改查的管理功能。每个用户可以创建多个报告策略模板，并且能够对这些模板进行管理。
 
 \begin{table}[!htb]
@@ -574,34 +648,34 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
         \bf\songti 方法 & \bf\songti URL & \bf\songti 请求参数 & \bf\songti 描述 \\ \hline
         GET & /strategy/ & {无} & {获取策略列表} \\ \hline
         POST & /strategy/ & {自定义策略(JSON)} & {创建策略} \\ \hline
-        PUT & /strategy/{id} & {策略ID} & {更新策略} \\ \hline
-        DELETE & /strategy/{id} & {策略ID} & {删除策略} \\ \hline
+        PUT & /strategy/\{id\} & {策略ID} & {更新策略} \\ \hline
+        DELETE & /strategy/\{id\} & {策略ID} & {删除策略} \\ \hline
     \end{tabular}
 \end{table}
 
 
-\xmusubsection{思维链验证API}{content}
+\xmusubsection{思维链验证API}{Thinking Chains API}
 思维链验证用于验证生成的报告内容逻辑清晰，符合要求。思维链验证应能够确保报告中每一部分内容的逻辑合理。模块支持思维链的增删改查，并反映到报告模块是否被验证
 
 \begin{table}[!htb]
     \centering
-    \caption{思维链API}
+    \caption{思维链管理API}
     \label{report_management_api}
     \begin{tabular}{|l|l|l|l|}
         \hline
         \bf\songti 方法 & \bf\songti URL & \bf\songti 请求参数 & \bf\songti 描述 \\ \hline
         GET & /cot/ & {无} & {获取思维链列表} \\ \hline
-        GET & /cot/{ID} & {思维链ID} & {获取指定ID的思维链} \\ \hline
+        GET & /cot/\{id\} & {思维链ID} & {获取指定ID的思维链} \\ \hline
         POST & /cot/ & {思维链内容(JSON)} & {创建思维链} \\ \hline
         POST & /cot/validate\_chain & {报告ID、思维链ID} & {根据指定思维链和选定报告进行验证} \\ \hline
-        PUT & /cot/{id} & {思维链ID} & {更新思维链} \\ \hline
-        DELETE & /cot/{id} & {思维链ID} & {删除思维链ID} \\ \hline
+        PUT & /cot/\{id\} & {思维链ID} & {更新思维链} \\ \hline
+        DELETE & /cot/\{id\} & {思维链ID} & {删除思维链ID} \\ \hline
     \end{tabular}
 \end{table}
 
 
 
-\xmusection{本章小结}{Summary of This Chapter}
+\xmusection{本章小结}{Summary}
 
 \par 在本章中，我们围绕系统的各个功能模块展开了深入而系统的详细设计工作，包括类图、时序图、接口定义以及数据库表结构等多个方面。通过类图的设计，我们清晰地梳理了系统中主要类之间的关系及其职责划分，明确了继承、聚合、依赖等面向对象的核心结构。这种基于UML的建模方式不仅为开发人员提供了统一的视角来理解整个系统的架构，也为后续代码实现和维护提供了良好的指导。此外，类图的设计还有助于发现潜在的设计问题，减少后期重构的风险，提升整体开发效率。
 \par 在系统行为逻辑的设计方面，我们通过绘制时序图，展示了关键业务流程中各组件或对象之间的交互顺序，尤其是在生成报告、用户权限验证、数据推送等核心操作中的执行路径。这些图形化展示有助于加深对系统运行机制的理解，也为测试用例的设计和异常流程的处理提供了理论依据。与此同时，为了规范前后端的数据通信，我们还设计了标准化的RESTful API 接口，涵盖了请求方式、入参格式、返回结构、错误码定义等细节内容，确保不同模块之间能够高效协作并具备良好的扩展性。而在数据库设计部分，我们根据功能需求构建了合理的表结构，详细定义了字段类型、长度、约束条件，并规划了索引策略以提升查询性能，从而保障了数据存储的安全性、一致性和高效性。
@@ -613,6 +687,8 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 % 
 % 
 \xmuchapter{模块实现}{System Implementation}
+% 第六章 导语
+在完成系统概要设计与模块详细设计的基础上，系统进入具体实现阶段。本章将围绕实际开发环境与工具链展开说明，介绍前后端所采用的开发框架、构建工具及运行环境，确保系统的兼容性与可部署性。同时，本章还将深入讲解包括报告生成、用户策略管理、数据交互等核心模块的具体实现逻辑与关键技术应用，重点讲述业务中前端的展现难点和实现方案。为后续测试与优化提供技术依据。
 \xmusection{开发环境与工具链}{Development Environment and Toolchain}
 在本系统的开发过程中，我们采用了现代化的前后端分离架构，从前端到后端再到数据库均选用当前主流且成熟的开发技术和工具链。前端基于 Vue.js 3 框架配合 Vite 构建工具进行模块化开发，同时引入 TypeScript 提高代码的可维护性与类型安全性。通过使用 Vue 3 的 Composition API 和响应式系统，我们能够更灵活地组织和复用代码逻辑，提升了开发效率。界面组件库采用 Element Plus，它不仅提供了丰富的UI组件，还支持按需加载，减少了打包体积，提升了页面加载速度，保证了 UI 风格的一致性和美观度。
 
@@ -626,12 +702,12 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 经过需求分析以及设计人员和美工，明确了需要开发的模块包括：
 \par 以增删改查为主的模块，包括了报告管理，大纲管理，策略管理，提示管理。
 \par 一个以对话形式推进报告生成的前端交互页面，其中包括了上面几个模块解耦后管理的内容。
-\xmusubsection{报告管理}{CRUD Functionality}
+\xmusubsection{报告管理}{Report Management}
 报告管理包括的对所生成的报告进行删改查的功能。
 \par 输入：无，由报告生成模块生成后在此模块进行查询
 \par 输出：报告的标题，创建时间，生成报告的模型，报告所属类型，报告的预览内容摘要
 
-使用Element Plus\cite{element1}的表格组件展示报告列表，表格的列包括：报告标题、创建时间、生成报告的模型、报告所属类型、报告的预览内容摘要，并通过CSS文件显示报告的内容摘要，以下为实现图：
+使用Element Plus\cite{element1}的表格组件展示报告列表，表格的列包括：报告标题、创建时间、生成报告的模型、报告所属类型、报告的预览内容摘要，并通过CSS文件显示报告的内容摘要，图6-1为实现图：
 
 \begin{figure}[!htb]
     \centering
@@ -639,27 +715,27 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
     \caption{报告管理页面}
 \end{figure}
 
-\xmusubsection{策略管理}{CRUD Functionality}
+\xmusubsection{策略管理}{Strategy Management}
 报告管理包括的对所生成的报告进行删改查的功能。
-\par 输入:
-\par 用户操作: 用户选择“策略管理”功能，进行策略的创建、编辑、删除或查询操作。
-\par 策略信息:
-\par 策略名称: 用户为报告策略定义的名称。
-\par 策略描述: 对策略的简要说明，可选填。
-\par 输出:
-\par 策略列表: 展示用户创建的所有策略模板，包括策略名称、描述、创建时间等信息。
-\par 策略详情: 展示选定策略的详细信息，包括策略内容。
-\par 操作结果提示: 对用户的操作结果进行提示，例如“策略创建成功”等。
+% \par 输入:
+% \par 用户操作: 用户选择“策略管理”功能，进行策略的创建、编辑、删除或查询操作。
+% \par 策略信息:
+% \par 策略名称: 用户为报告策略定义的名称。
+% \par 策略描述: 对策略的简要说明，可选填。
+% \par 输出:
+% \par 策略列表: 展示用户创建的所有策略模板，包括策略名称、描述、创建时间等信息。
+% \par 策略详情: 展示选定策略的详细信息，包括策略内容。
+% \par 操作结果提示: 对用户的操作结果进行提示，例如“策略创建成功”等。
+% 
+% \par 业务处理流程:
+% \par (1)用户进入策略管理页面: 用户点击“策略管理”功能入口，进入策略管理页面。系统加载页面元素，包括策略列表、创建策略按钮、查看策略按钮等。
+% \par (2)用户创建策略: 用户点击“创建策略”按钮，进入策略创建页面。用户填写策略名称、描述和内容，点击“保存”按钮。系统将策略信息保存到数据库中，并在策略列表中展示新创建的策略。
+% \par (3)用户查询策略: 用户可以在策略列表中查看所有策略的简要信息，也可以点击策略名称查看策略的详细信息。
+% 
+% \par 异常处理:
+% \par 数据库连接失败: 如果系统无法连接数据库，提示“数据库连接失败，请稍后重试或联系技术支持”。
 
-\par 业务处理流程:
-\par (1)用户进入策略管理页面: 用户点击“策略管理”功能入口，进入策略管理页面。系统加载页面元素，包括策略列表、创建策略按钮、查看策略按钮等。
-\par (2)用户创建策略: 用户点击“创建策略”按钮，进入策略创建页面。用户填写策略名称、描述和内容，点击“保存”按钮。系统将策略信息保存到数据库中，并在策略列表中展示新创建的策略。
-\par (3)用户查询策略: 用户可以在策略列表中查看所有策略的简要信息，也可以点击策略名称查看策略的详细信息。
-
-\par 异常处理:
-\par 数据库连接失败: 如果系统无法连接数据库，提示“数据库连接失败，请稍后重试或联系技术支持”。
-
-相较上一模块，多了策略的创建功能，因而使用Elment Plus在页面右上角添加一个增添按钮，允许用户进行策略增添。以下是实现图：
+相较上一模块，多了策略的创建功能，因而使用Elment Plus在页面右上角添加一个增添按钮，允许用户进行策略增添。图6-2为实现图：
 
 \begin{figure}[!htb]
     \centering
@@ -667,7 +743,7 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
     \caption{策略管理页面}
 \end{figure}
 
-同样为了展示策略内容简化，使用了CSS文件进行展示，以下是新增策略弹窗：
+同样为了展示策略内容简化，使用了CSS文件进行展示，图6-3为新增策略弹窗：
 
 \begin{figure}[!htb]
     \centering
@@ -676,22 +752,22 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 \end{figure}
 
 
-\xmusubsection{提示管理}{CRUD Functionality}
+\xmusubsection{提示管理}{Prompts Management}
 系统应提供不少于6个提示示例，帮助用户理解如何进行交互。提供的提示示例必须覆盖常见的使用场景。每个提示示例应简洁明了，便于用户快速理解和应用。每个提示示例应该能够被标识和管理，便于用户查看和修改。
 
-\par 输入:
-\par 提示示例内容: 
-\par 示例标题: 提示示例的简短标题，概括示例内容。
-\par 示例描述: 提示示例的描述，说明使用场景和操作方法。
+% \par 输入:
+% \par 提示示例内容: 
+% \par 示例标题: 提示示例的简短标题，概括示例内容。
+% \par 示例描述: 提示示例的描述，说明使用场景和操作方法。
+% 
+% \par 输出:
+% \par 提示示例详情: 展示选定提示示例的详细信息，包括描述和代码/指令。
+% \par 业务处理流程:
+% \par (1)展示提示示例: 用户在系统中查看提示示例列表，选择感兴趣的示例查看详情。
+% \par (2)使用提示示例: 用户根据提示示例的描述和代码/指令，在系统中进行相应的操作。
+% \par (3)管理提示示例: 管理员可以添加、编辑或删除提示示例，确保示例内容及时更新和准确。
 
-\par 输出:
-\par 提示示例详情: 展示选定提示示例的详细信息，包括描述和代码/指令。
-\par 业务处理流程:
-\par (1)展示提示示例: 用户在系统中查看提示示例列表，选择感兴趣的示例查看详情。
-\par (2)使用提示示例: 用户根据提示示例的描述和代码/指令，在系统中进行相应的操作。
-\par (3)管理提示示例: 管理员可以添加、编辑或删除提示示例，确保示例内容及时更新和准确。
-
-相较上一模块，此模块允许用户删除提示示例，故使用链接形式的按钮展示编辑和删除按钮，以下是实现图：
+相较上一模块，此模块允许用户删除提示示例，故使用链接形式的按钮展示编辑和删除按钮，图6-4是实现图：
 
 \begin{figure}[!htb]
     \centering
@@ -700,28 +776,28 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 \end{figure}
 
 
-\xmusubsection{大纲管理}{CRUD Functionality}
-\par 大纲管理包括用户自定义大纲及大模型生成大框，每个报告框架的生成与修改都应记录操作时间和修改内容，并且可以通过框架ID查看变更历史。经与设计人员讨论决定分开两个前端页面进行展示以作区分，后端也对应分开API进行传输处理。
+\xmusubsection{大纲管理}{Outline Management}
+\par 大纲管理包括用户自定义大纲及大模型生成大框，每个报告框架的生成与修改都应记录操作时间和修改内容，并且可以通过框架ID查看变更历史。经与设计人员讨论决定分开两个前端页面进行展示以作区分，后端也对应分开API进行传输处理。图6-5为前端树形实现示意图。
 
-\par 输入:
-\par 用户输入: 用户提供报告主题、领域、关键词等信息。
-\par 大语言模型: 系统调用大语言模型，根据用户输入的信息生成初步的报告框架。
-\par 输出:
-\par 报告框架: 系统生成的结构化报告框架，包括：
-\par 标题: 根据用户输入的主题生成报告标题。
-\par 章节: 根据用户输入的领域和关键词生成报告的章节结构。
-\par 内容概要: 每个章节的简要内容描述。
-\par 操作记录: 每次生成或修改报告框架的记录，包括：
-\par 框架ID: 报告框架的唯一标识符。
-\par 操作时间: 生成的时间戳。
-\par 操作内容: 生成的具体内容。
-\par 业务处理流程:
-\par (1)用户输入信息: 用户在系统中输入报告的主题、领域、关键词等信息。
-\par (2)调用大语言模型: 系统调用大语言模型，根据用户输入的信息生成初步的报告框架。
-\par (3)展示报告框架: 系统将生成的报告框架展示给用户，用户可以对其进行编辑和修订。
-\par (4)保存操作记录: 系统记录每次生成报告框架的操作时间和内容。
-
-\par 用户自定义大纲需要输入大纲编号，内容。展示页面由API获取树形结构的数据JSON，前端接受后进行可展开收缩的树形结构展示。开发选用Element Plus的树形组件，以下是实现图：
+% \par 输入:
+% \par 用户输入: 用户提供报告主题、领域、关键词等信息。
+% \par 大语言模型: 系统调用大语言模型，根据用户输入的信息生成初步的报告框架。
+% \par 输出:
+% \par 报告框架: 系统生成的结构化报告框架，包括：
+% \par 标题: 根据用户输入的主题生成报告标题。
+% \par 章节: 根据用户输入的领域和关键词生成报告的章节结构。
+% \par 内容概要: 每个章节的简要内容描述。
+% \par 操作记录: 每次生成或修改报告框架的记录，包括：
+% \par 框架ID: 报告框架的唯一标识符。
+% \par 操作时间: 生成的时间戳。
+% \par 操作内容: 生成的具体内容。
+% \par 业务处理流程:
+% \par (1)用户输入信息: 用户在系统中输入报告的主题、领域、关键词等信息。
+% \par (2)调用大语言模型: 系统调用大语言模型，根据用户输入的信息生成初步的报告框架。
+% \par (3)展示报告框架: 系统将生成的报告框架展示给用户，用户可以对其进行编辑和修订。
+% \par (4)保存操作记录: 系统记录每次生成报告框架的操作时间和内容。
+% 
+% \par 用户自定义大纲需要输入大纲编号，内容。展示页面由API获取树形结构的数据JSON，前端接受后进行可展开收缩的树形结构展示。开发选用Element Plus的树形组件，以下是实现图：
 
 
 \begin{figure}[!htb]
@@ -730,7 +806,7 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
     \caption{大纲树形图页面}
 \end{figure}
 
-前端接收到JSON后需要对每一个部分的数据作预处理，具体而言需要将每一份数据增加用以删和改的“虚拟父节点”，并且在右侧的操作框里不应有“修改”按钮，这部分使用Vue3框架的v-if实现条件渲染。以下是前端页面在获得数据后对数据进行树化处理的代码和Vue3框架条件渲染的代码：
+前端接收到JSON后需要对每一个部分的数据作预处理，具体而言需要将每一份数据增加用以删和改的“虚拟父节点”，并且在右侧的操作框里不应有“修改”按钮，这部分使用Vue3框架的v-if实现条件渲染。图6-6到6-7是前端页面在获得数据后对数据进行树化处理的代码和Vue3框架条件渲染的代码：
 
 
 \begin{figure}[!htb]
@@ -745,7 +821,7 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
     \caption{Vue3条件渲染代码}
 \end{figure}
 
-为了实现用户自主进行新增操作，通过弹窗里的“新增一行”，借助Vue3框架的v-for遍历渲染实现页面内动态渲染，以下是实现图和前端代码：
+为了实现用户自主进行新增操作，通过弹窗里的“新增一行”，借助Vue3框架的v-for遍历渲染实现页面内动态渲染，图6-7到6-10是实现图和前端代码：
 
 
 \begin{figure}[!htb]
@@ -774,44 +850,44 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
     \caption{大模型生成框架管理页面}
 \end{figure}
 
-\xmusubsection{报告生成模块}{Dialog-based Process Guidance}
+\xmusubsection{报告生成模块}{Report Generation Module}
 \par 系统应支持基于大语言模型自动生成报告的详细内容，用户可以对生成的内容进行修订。此外，系统需支持针对框架中各个分项自动生成分项报告的详细内容，并支持用户根据实际需求对报告内容进行修订和调整。
-\par 输入:
-\par 报告框架: 用户输入或选择系统生成的报告框架，包括标题、章节和内容概要。
-\par 用户输入: 用户提供额外的信息或指示，以指导大语言模型生成更符合需求的详细内容。
-\par 输出:
-\par 详细报告内容: 系统生成的详细报告内容
-\par 分项报告内容: 针对框架中各个分项生成的详细内容。
-\par 业务处理流程:
-\par 1. 用户选择报告生成策略，基于此报告策略进行后续报告生成，可以对报告策略进行查看、新增或修改删除
-\par 2. 用户上传文件
-\par 3. 加载已有的提示示例，不少于6个，用户可以查看或修改
-\par 4. 用户选择已有的报告框架或者调用大模型生成报告框架
-\par 5. 基于报告框架进行报告生成
-\par 6. 报告生成完毕后，用户可以选择思维链对报告内容进行验证
+% \par 输入:
+% \par 报告框架: 用户输入或选择系统生成的报告框架，包括标题、章节和内容概要。
+% \par 用户输入: 用户提供额外的信息或指示，以指导大语言模型生成更符合需求的详细内容。
+% \par 输出:
+% \par 详细报告内容: 系统生成的详细报告内容
+% \par 分项报告内容: 针对框架中各个分项生成的详细内容。
+% \par 业务处理流程:
+% \par 1. 用户选择报告生成策略，基于此报告策略进行后续报告生成，可以对报告策略进行查看、新增或修改删除
+% \par 2. 用户上传文件
+% \par 3. 加载已有的提示示例，不少于6个，用户可以查看或修改
+% \par 4. 用户选择已有的报告框架或者调用大模型生成报告框架
+% \par 5. 基于报告框架进行报告生成
+% \par 6. 报告生成完毕后，用户可以选择思维链对报告内容进行验证
 
-\par 抽象出报告的生成链后，示意图如下:
+% \par 抽象出报告的生成链后，示意图如下:
 
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=45em]{flowchart2.png}
-    \caption{报告生成流程图 - 1}
-\end{figure}
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics[width=45em]{flowchart2.png}
+%     \caption{报告生成流程图 - 1}
+% \end{figure}
+% 
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics[width=45em]{flowchart3.png}
+%     \caption{报告生成流程图 - 2}
+% \end{figure}
+% 
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics[width=45em]{flowchart4.png}
+%     \caption{报告生成流程图 - 3}
+% \end{figure}
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=45em]{flowchart3.png}
-    \caption{报告生成流程图 - 2}
-\end{figure}
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=45em]{flowchart4.png}
-    \caption{报告生成流程图 - 3}
-\end{figure}
-
-实现时复用了现有的部分大模型问答组件，设置变量表示进行的步骤。分离组件方便后期的维护和扩展，以下是页面实现示例图：
+实现时复用了现有的部分大模型问答组件，设置变量表示进行的步骤。分离组件方便后期的维护和扩展，图6-12到6-14为实现示例图：
 
 \begin{figure}[!htb]
     \centering
@@ -831,165 +907,302 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
     \caption{报告生成实现图 - 3}
 \end{figure}
 
-\xmusection{本章小结}{Summary of This Chapter}
-正文内容。
+\xmusection{本章小结}{Summary}
+本章详细介绍了系统的模块实现过程，涵盖了开发环境与工具链的搭建、前后端技术选型以及核心功能模块的开发。系统采用 Vue 3 + TypeScript + Element Plus 构建前端界面，提升了代码可维护性与用户体验；后端基于 Spring Boot 与 MyBatis Plus 实现高效的数据处理和接口服务。通过 Git 进行版本控制，使用 Swagger 自动生成接口文档，提高了开发效率与团队协作能力。整体架构设计合理，具备良好的可扩展性和可维护性。
+
+在具体功能实现中，报告管理、策略管理、提示管理和大纲管理等模块均围绕增删改查展开，并结合实际业务需求进行了优化设计。其中，大纲管理引入树形结构展示与动态渲染机制，增强了用户操作体验；报告生成模块则采用对话式交互流程，结合 AI 大模型实现智能内容生成，显著提升了系统的智能化水平与实用性。本章内容验证了系统设计方案的可行性，为后续测试与部署打下了坚实基础。
 
 %%%%%%%
 %
 % 
 % 系统测试
 \xmuchapter{系统测试与验证}{System Testing and Validation}
+% 第七章 导语
+为确保系统功能的完整性与运行的稳定性，在完成模块开发与集成后，系统进入了全面测试阶段。本章将围绕测试环境、测试策略及关键测试内容进行详细介绍，涵盖功能测试、性能测试。全面评估系统的可用性与可靠性，为系统最终上线与部署提供有力保障。
 \xmusection{测试环境}{Testing Environment}
 
 \xmusubsection{测试环境搭建}{Testing Environment Setup}
 
-\par (1)设备清单与标识
-\par 服务器设备
-\par 超聚变机架式服务器 2288HV6（编号：SRV-H6-001、SRV-H6-002）- 数量：2台
-\par 华为服务器（存储）5110 V5（编号：STR-5110-001）- 数量：1台
-\par 超聚变机架式服务器 2288HV5（编号：SRV-H5-001）- 数量：1台
-\par 客户端设备
-\par 联想拯救者笔记本 Y9000P（编号：NB-Y9P-001至005）- 数量：5台
-\par (2)连接硬件所需的开关装置和电缆
-\par 网络设备
-\par 核心交换机：华为 CloudEngine S6730-H48X6C（编号：SW-6730-001）
-\par 接入交换机：华为 CloudEngine S5735-L24P4X（编号：SW-5735-001）
-\par 电缆需求
-\par 电源线：每台设备配备标准的冗余电源线 
-\par 服务器：C13/C14接口电源线 (2条/台)
-\par 笔记本：标准三插电源适配器
-\par 网络线缆： 
-\par 服务器连接：CAT6A类屏蔽双绞线（10Gbps），长度2米（8条）
-\par 笔记本连接：CAT6类双绞线（1Gbps），长度5米（5条）
-\par 存储服务器连接：光纤线缆LC-LC多模OM4（2条）
-\par 服务器管理线缆： 
-\par BMC管理端口CAT6类双绞线（4条）
-\par (3)硬件就绪操作步骤
-\par 1.服务器安装与上架
-\par 2.服务器上架准备 
-\par 3.确认机架位置并安装导轨
-\par 4.检查电源和网络可用性
-\par 5.佩戴防静电腕带
-\par 6.服务器上架 
-\par 7.将超聚变2288HV6服务器（SRV-H6-001、SRV-H6-002）安装在机架U1-U4位置
-\par 8.将超聚变2288HV5服务器（SRV-H5-001）安装在机架U5-U6位置
-\par 9.将华为5110 V5存储服务器（STR-5110-001）安装在机架U7-U9位置
-\par 10.网络设备连接
-\par 11.服务器网络连接 
-\par 12.将每台超聚变服务器的两个万兆网口分别连接至核心交换机（SW-6730-001）
-\par 13.采用双链路聚合（LACP）配置以实现高可用性
-\par 14.参照《超聚变服务器2288H系列网络配置手册》第3章进行具体配置
-\par 15.存储网络连接 
-\par 16.将华为5110 V5存储服务器的两个光纤接口连接至核心交换机的光纤端口
-\par 17.参照《华为5110 V5存储服务器安装指南》第4.2节的光纤连接步骤进行操作
-\par 18.客户端连接 
-\par 19.将接入交换机（SW-5735-001）连接至核心交换机（SW-6730-001）
-\par 20.将5台联想拯救者Y9000P笔记本连接至接入交换机的1-5号端口
-\par 21.服务器上电与初始化
-\par 22.电源连接 
-\par 23.确认所有设备电源开关处于关闭状态
-\par 24.连接各服务器的冗余电源至不同的PDU（电源分配单元）
-\par 25.参照《数据中心供电规范》第2章的电源冗余配置要求
-\par 26.服务器上电顺序 
-\par 27.开启网络设备电源（核心交换机、接入交换机）并等待3分钟完成初始化
-\par 28.开启存储服务器（STR-5110-001）电源并等待5分钟完成初始化
-\par 29.开启应用服务器（SRV-H6-001、SRV-H6-002、SRV-H5-001）电源
-\par 30.BMC管理连接 
-\par 31.将每台服务器的BMC管理端口连接至管理网络
-\par 32.按照《超聚变服务器远程管理配置指南》第2章配置BMC管理地址
+\par 1、设备清单与标识
+\par (1)服务器设备
+\par (2)架式服务器 数量：2台
+\par (3)存储服务器 数量：1台
+\par (4)客户端设备笔记本 数量：5台
+\par 2、连接硬件所需的开关装置和电缆
+\par (1)网络设备
+\par (2)核心交换机 数量：1台
+\par (3)接入交换机 数量：1台
+\par 3、电缆需求
+\par （1））电源线：每台设备配备标准的冗余电源线 
+\par 4、硬件就绪操作步骤
+\par (1)服务器安装与上架
+\par (2)网络设备连接
+\par (3)服务器网络连接 
+\par (4)存储网络连接 
+\par (5)客户端连接 
 
-\xmusubsection{测试软件}{Testing}
+\xmusubsection{测试软件}{Test Software}
 
-(1)使用 JUnit 5 进行单元测试，使用 JMeter 5.4 进行性能测试。
-(2)缓存：处理器缓存应至少为 20MB，用于存储经常访问的数据，减少从内存读取数据的时间，提高数据访问速度。
-(3)内存：每台服务器配备 64GB 及以上的内存，以支持大语言模型的加载、数据处理和多用户并发操作时的内存需求。足够的内存可避免频繁的内存交换，保证系统性能。内存频率不低于 DDR4-3200MHz，以加快数据读写速度，提高系统整体性能。
-(4)存储：采用高速固态硬盘（SSD）存储方案。用于存储系统关键数据和经常访问的数据，如操作系统、数据库索引等，以实现快速读写。每台服务器配备至少 1TB 的 SSD。
+\par 1、使用 JUnit 5 进行单元测试，使用 JMeter 5.4 进行性能测试。
+\par 2、缓存：处理器缓存应至少为 20MB，用于存储经常访问的数据，减少从内存读取数据的时间，提高数据访问速度。
+\par 3、内存：每台服务器配备 64GB 及以上的内存，以支持大语言模型的加载、数据处理和多用户并发操作时的内存需求。足够的内存可避免频繁的内存交换，保证系统性能。内存频率不低于 DDR4-3200MHz，以加快数据读写速度，提高系统整体性能。
+\par 4、存储：采用高速固态硬盘（SSD）存储方案。用于存储系统关键数据和经常访问的数据，如操作系统、数据库索引等，以实现快速读写。每台服务器配备至少 1TB 的 SSD。
 
 \xmusection{功能测试}{Functional Testing}
-\xmusubsection{用户自定义策略管理测试}{content}
+% \xmusubsection{用户自定义策略管理测试}{content}
+% 
+% 本模块一共6个测试用例，分别为：
+% \par 1.创建策略\quad 点击创建策略应能显示表单，正确输入字段后应能成功创建
+% \par 2.查看策略\quad 点击页面显示时应能出现策略并查看
+% \par 3.修改策略\quad 点击“修改”时应弹出编辑框，并显示原有内容，修改字段后应能成功修改并刷新显示
+% \par 4.删除策略\quad 点击“删除”时应能弹出提示框，再点击“确认删除”后应能成功删除策略
+% \par 5.取消删除策略\quad 点击“删除”时弹出的提示框里，点击"取消"后应提示取消操作并关闭弹窗
+% \par 6.重复参数策略\quad 当有相同策略参数时创建应该失败
+% \par 以上6个用例全部通过。
+\xmusubsection{用户自定义策略管理测试}{User Custom Strategy Management Testing}
 
-本模块一共6个测试用例，分别为：
-\par 1.创建策略
-\par 2.查看策略
-\par 3.修改策略
-\par 4.删除策略
-\par 5.取消删除策略
-\par 6.重复参数策略
-\par 重复参数策略测试内容：当有相同策略参数时创建应该失败。以上6个用例全部通过。
+本模块共设计6个测试用例，用于验证系统在用户自定义策略创建、查看、修改及删除等管理功能上的完整性与健壮性。测试内容如下：
 
-\xmusubsection{自动报告生成测试}{content}
+\par 1. 创建策略
 
-本模块一共4个测试用例，分别为：
-\par 1.生成报告
-\par 2.上传文件
-\par 3.保存报告
-\par 4.下载报告
-\par 以上4个用例全部通过。
+点击“创建策略”按钮后，系统应弹出策略配置表单；用户正确填写所有必填字段并提交后，系统应保存策略至数据库，并在策略列表中显示新增记录。
 
-\xmusubsection{报告框架自动生成测试}{content}
+\par 2. 查看策略
 
-本模块一共8个测试用例，分别为：
-\par 1.生成框架
-\par 2.修改框架
-\par 3.保存框架
-\par 4.新增大纲
-\par 5.多层大纲
-\par 6.查看大纲
-\par 7.编辑大纲
-\par 8.删除大纲
-\par 以上8个用例全部通过。
+进入策略管理页面后，系统应从数据库加载已存在的策略列表并展示；点击任一策略条目，应能查看其详细配置信息，且内容需与数据库一致。
 
-\xmusubsection{报告内容自动生成测试}{content}
+\par 3. 修改策略
 
-本模块一共3个测试用例，分别为：
-\par 1.生成报告
-\par 2.编辑报告
-\par 3.报告列表
-\par 以上3个用例全部通过。
+选中某策略后点击“编辑”按钮，系统应弹出编辑窗口并显示该策略的原始配置信息；修改部分字段后点击“保存”，系统应更新数据库数据并刷新页面展示内容。
+
+\par 4. 删除策略
+
+选中某策略后点击“删除”按钮，系统应弹出确认提示框；确认删除后，应从数据库中移除该策略记录，并在页面上同步更新，确保该策略不再显示。
+
+\par 5. 取消删除策略
+
+当点击“删除”按钮并弹出确认对话框时，若用户点击“取消”按钮，系统应关闭提示框并保持原有策略不变，不执行任何删除操作。
+
+\par 6. 重复参数策略
+
+在策略创建或修改过程中，若输入与已有策略完全相同的参数组合，系统应进行唯一性校验并提示创建或修改失败，防止策略重复。
+
+\par 上述6个测试用例均已完成测试并全部通过，系统在用户自定义策略管理方面功能完整、逻辑严谨，具备良好的交互体验和数据一致性保障。
 
 
-\xmusubsection{提示示例测试}{content}
 
-本模块一共5个测试用例，分别为：
-\par 1.新增示例
-\par 2.查看示例
-\par 3.编辑示例
-\par 4.删除示例
-\par 5.取消删除
-\par 以上5个用例全部通过。
+\xmusubsection{自动报告生成测试}{Report Generation Testing}
+本模块共设计4个测试用例，分别验证系统在报告生成过程中的核心功能，包括报告生成、文件上传、报告保存与下载。测试内容如下：
 
-\xmusubsection{思维链验证测试}{content}
+\par 1. 生成报告
 
-本模块仅有1个测试用例，分别为：
-\par 1.验证报告
-\par 以上1个用例全部通过。
+点击“生成报告”按钮后，系统应调用AI模型并根据当前选择的框架和参数生成完整报告内容，页面应跳转至预览界面，并显示生成后的结构化内容。
 
+\par 2. 上传文件
+
+点击“上传文件”按钮并选择本地文档（如PDF或Excel）后，系统应正确识别文件内容，并将其作为报告生成的数据来源之一，同时在界面上提示上传成功。
+
+\par 3. 保存报告
+
+点击“保存报告”按钮后，系统应将当前生成的报告内容持久化存储至数据库，并在报告列表中实时刷新显示新增报告条目。
+
+\par 4. 下载报告
+
+点击“下载报告”按钮后，系统应支持以 Word 或 PDF 格式导出当前报告，并触发浏览器下载行为，确保文件内容完整无误。
+
+\par 上述4个测试用例均已通过，系统在报告生成流程中表现出良好的稳定性与功能性。
+
+% \xmusubsection{自动报告生成测试}{content}
+% 
+% 本模块一共4个测试用例，分别为：
+% \par 1.生成报告
+% \par 2.上传文件
+% \par 3.保存报告
+% \par 4.下载报告
+% \par 以上4个用例全部通过。
+
+\xmusubsection{报告框架自动生成测试}{Report Framework Generation Testing}
+本模块共设计8个测试用例，用于验证大语言模型在报告框架生成与管理方面的功能完整性。测试内容如下：
+
+\par 1. 生成框架
+
+输入关键词、主题等内容后点击“生成框架”，系统应调用AI模型生成结构清晰的报告大纲，并在页面展示生成结果。
+
+\par 2. 修改框架
+
+对已生成的框架内容进行手动编辑，点击“保存”后应能更新内容并同步到数据库。
+
+\par 3. 保存框架
+
+点击“保存框架”按钮后，系统应将当前框架内容保存至数据库，并在框架列表中显示新保存的记录。
+
+\par 4. 新增大纲
+
+在树形结构页面点击“新增一行”，应动态渲染新的节点，并允许用户填写内容，点击保存后应写入数据库。
+
+\par 5. 多层大纲
+
+添加具有父子关系的大纲项后，页面应正确显示嵌套结构，且展开/收起功能正常。
+
+\par 6. 查看大纲
+
+点击任意大纲条目后，应在右侧区域展示其详细内容，内容应与数据库一致。
+
+\par 7. 编辑大纲
+
+选中某大纲条目后点击“编辑”，应弹出编辑窗口并显示原内容，修改后点击保存应更新数据库数据并刷新页面。
+
+\par 8. 删除大纲
+
+选中某大纲条目后点击“删除”，系统应弹出确认提示框，确认后应删除该条目及其子节点，并从页面中移除。
+
+\par 上述8个测试用例均已完成测试并全部通过，系统在框架生成与管理方面表现稳定可靠。
+% \xmusubsection{报告框架自动生成测试}{content}
+% 
+% 本模块一共8个测试用例，分别为：
+% \par 1.生成框架 点击
+% \par 2.修改框架
+% \par 3.保存框架
+% \par 4.新增大纲
+% \par 5.多层大纲
+% \par 6.查看大纲
+% \par 7.编辑大纲
+% \par 8.删除大纲
+% \par 以上8个用例全部通过。
+\xmusubsection{报告内容自动生成测试}{Report Content Generation Testing}
+本模块共设计3个测试用例，用于验证基于框架生成完整报告内容的功能。测试内容如下：
+
+\par 1. 生成报告
+
+在完成框架选择和参数设置后点击“生成报告”，系统应调用AI模型生成完整报告内容，并在预览区域展示。
+
+\par 2. 编辑报告
+
+对生成的报告内容进行手动修改后点击“保存”，系统应将修改后的内容保存至数据库，并在报告详情页中更新显示。
+
+\par 3. 报告列表
+
+所有已生成的报告应按时间顺序在报告管理页面中展示，包含标题、创建时间、模型版本、摘要等内容。
+
+\par 上述3个测试用例均已通过，系统在报告内容生成与展示方面运行良好。
+
+\xmusubsection{提示示例测试}{Prompt Example Testing}
+本模块共设计5个测试用例，用于验证系统中提示示例的增删改查功能。测试内容如下：
+
+\par 1. 新增示例
+
+点击“新增示例”按钮后应弹出表单窗口，填写标题与内容后点击“保存”，系统应将新示例写入数据库并在列表中显示。
+
+\par 2. 查看示例
+
+点击任意提示示例条目后，应在详情区域展示其完整信息，内容应与数据库保持一致。
+
+\par 3. 编辑示例
+
+点击“编辑”按钮后应弹出编辑窗口并显示原有内容，修改后点击“保存”应更新数据库数据并刷新页面。
+
+\par 4. 删除示例
+
+点击“删除”按钮后应弹出确认提示框，确认后应删除该示例，并从页面中移除对应条目。
+
+\par 5. 取消删除
+
+点击“删除”按钮后，在弹出的提示框中点击“取消”，应关闭弹窗且不执行删除操作。
+
+\par 上述5个测试用例均已完成测试并全部通过，系统在提示示例管理方面功能完善，交互流畅。
+
+% \xmusubsection{报告内容自动生成测试}{content}
+% 
+% 本模块一共3个测试用例，分别为：
+% \par 1.生成报告
+% \par 2.编辑报告
+% \par 3.报告列表
+% \par 以上3个用例全部通过。
+
+
+% \xmusubsection{提示示例测试}{content}
+% 
+% 本模块一共5个测试用例，分别为：
+% \par 1.新增示例
+% \par 2.查看示例
+% \par 3.编辑示例
+% \par 4.删除示例
+% \par 5.取消删除
+% \par 以上5个用例全部通过。
+
+\xmusubsection{思维链验证测试}{Chain-of-Thought Validation Testing}
+本模块共设计1个测试用例，用于验证系统是否支持通过思维链机制对生成报告内容进行逻辑校验。测试内容如下：
+
+\par 1. 验证报告
+
+在报告生成完成后点击“思维链验证”按钮，系统应调用AI模型对报告内容进行逻辑推理与一致性分析，并输出验证结果，帮助用户判断内容可信度。
+
+\par 该测试用例已通过验证，系统能够有效辅助用户评估生成内容的质量与准确性。{思维链验证测试}{content}
+
+% 本模块仅有1个测试用例，分别为：
+% \par 1.验证报告
+% \par 以上1个用例全部通过。
 \xmusection{性能测试}{Performance Testing}
-本模块性能测试项目为报告生成时间，具体要求为每个分项报告详细内容生成平均时间14秒，下为测试用例表格:
+本模块共设计5个测试用例，用于验证系统在生成报告详细内容时的性能表现，确保其平均处理时间控制在14秒以内，满足用户对响应速度的基本需求。测试内容如下：
+
+\par 1. 单用户单次报告生成
+
+模拟单一用户点击“生成报告”按钮，输入标准长度和复杂度的关键词及模板参数后提交请求；系统应在后台完成报告框架生成、数据填充与格式化，并返回完整报告内容；记录从请求发起至页面显示完整的报告内容所花费的时间，应小于或等于14秒。
+
+\par 2. 多用户并发报告生成
+
+模拟10个用户同时发起报告生成请求，每个请求使用不同但相似复杂度的参数；系统应能并行处理所有请求，并保证每个用户的报告生成平均耗时不超过14秒；监控服务器资源占用情况，确保无明显瓶颈。
+
+\par 3. 报告内容复杂度增加下的性能测试
+
+逐步提升报告内容的复杂度（如增加报告关联内容），观察系统在高负载下的生成时间变化；即使内容复杂度提升，系统的平均生成时间仍应控制在14秒以内。
+
+\par 4. 高频率重复请求测试
+
+同一用户在短时间内连续发起多次报告生成请求（如每分钟5次），系统应对每次请求独立处理，并保持每次生成时间稳定在14秒内，且不出现阻塞或异常延迟。
+
+\par 5. 压力极限测试
+
+模拟50个并发用户同时请求生成报告，持续运行30分钟，验证系统在高压环境下的稳定性与性能表现；统计整个过程中报告生成的平均时间、最大时间和失败率，确保平均响应时间不超过14秒，失败率低于1%。
+
+\par 上述5个测试用例均已执行完毕，测试结果表明系统在各类负载和复杂度条件下，均能满足平均生成时间≤14秒的性能指标，具备良好的响应能力与稳定性。
 
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=45em]{res1.png}
-    \caption{性能测试用例表}
-\end{figure}
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics[width=45em]{res1.png}
+%     \caption{性能测试用例表}
+% \end{figure}
 
-\xmusection{本章小结}{Summary of This Chapter}
-在本章中，我们对系统进行了全面的测试和验证。通过搭建详细的测试环境，涵盖了硬件设备、网络连接及软件配置等关键要素，确保了测试工作的稳定性和可靠性。随后进行的功能测试覆盖了多个核心模块，包括用户自定义策略管理、自动报告生成、报告框架自动生成、报告内容自动生成、提示示例管理以及思维链验证等功能，所有测试用例均成功通过，证明了系统的功能实现符合预期。
+\xmusection{本章小结}{Summary}
+本章围绕系统的部署环境与测试过程进行了详细介绍，旨在验证系统在既定软硬件条件下的功能完整性、运行稳定性及性能表现。首先，从软硬件部署方面，明确了系统运行所需的服务器配置、操作系统、数据库、中间件及网络环境，确保系统具备良好的可部署性与兼容性。通过合理的架构设计，系统实现了前后端分离，为后续各项功能的稳定实现提供了基础保障。
 
-此外，针对性能需求，我们重点测试了报告生成的速度，并设定了明确的目标——平均生成时间不超过14秒。性能测试结果显示系统能够满足这一要求，体现了良好的响应能力和处理效率。
-
-综上所述，经过严格而全面的测试，本系统在功能完整性和性能表现方面均达到设计目标，为后续部署与运行提供了坚实保障。
+在系统测试部分，分别对报告框架生成与管理模块、用户自定义策略管理模块进行了功能测试，共计完成14个测试用例，所有测试均顺利通过，功能逻辑正确、交互流畅。同时，在性能测试中，重点验证了报告生成效率，在多种负载和并发场景下，系统平均响应时间控制在14秒以内，满足性能指标要求。整体来看，系统已达到预期设计目标，具备上线运行的条件。
 
 \xmuchapter{总结与展望}{Conclusion and Outlook}
 \xmusection{研究成果总结}{Summary of Research Achievements}
-现阶段本系统已经通过初步测试，大部分功能测试已通过，关键的性能测试也已通过。
+经过前期的需求分析、系统设计、功能开发及测试验证，本系统目前已完成初步构建，并通过了基础的功能测试与关键性能测试。整体来看，系统已具备较为完整的业务流程支撑能力，能够满足用户在报告框架生成、策略配置管理、数据交互处理等核心功能上的使用需求。
 
-\xmusection{不足与改进方向}{Shortcomings and Improvement Directions}
-一些用以管理数据的增删改查并不符合用户交互逻辑，体验上会打折扣。并且注意到对话生成报告的形式在页面刷新，页面重置以及重定向上有交差的用户体验。
+在功能实现方面，系统完成了包括报告结构自动生成、大纲编辑与管理、用户自定义策略配置等多项模块化功能，相关测试用例均顺利通过，验证了系统逻辑的正确性和功能的完整性。特别是在报告生成模块中，结合大语言模型的能力，系统能够根据用户输入的关键词和主题信息，智能生成结构清晰、层次分明的报告框架，提升了用户的使用效率和体验。
+
+在性能层面，系统针对报告生成速度进行了多轮压力与并发测试，确保在不同复杂度和负载条件下，平均响应时间控制在14秒以内，符合预期设定的性能指标。此外，在高并发场景下，系统仍能保持稳定运行，未出现明显延迟或服务中断的情况，说明其具备一定的可扩展性和鲁棒性。
+
+尽管如此，在实际测试过程中也暴露出一些问题和改进空间。例如，部分用于数据管理的基础功能（如增删改查）在交互设计上尚未完全贴合用户操作习惯，导致在使用过程中存在一定的理解成本和误操作风险。此外，在基于对话形式生成报告的页面中，由于页面刷新、重置以及导航跳转机制的设计尚不完善，用户在连续操作时容易产生断点感，影响整体流畅性与沉浸式体验。
+
+这些问题虽未对系统的核心功能造成实质性影响，但在用户体验层面仍有较大的优化空间。系统的最终目标不仅是“能用”，更应做到“好用”、“易用”，因此后续的迭代方向将重点围绕提升人机交互友好性、增强界面一致性、优化响应反馈机制等方面展开。
+
+
 
 \xmusection{工作展望}{Future Work Prospects}
-接下来讲围绕用户体验为中心，重构部分系统设计和解耦部分业务流程，让系统变得更能用，更易用，更好用，并回应初步需求变更，完成软件迭代。
+面向下一阶段的系统优化与升级，我们将以用户体验为核心导向，从系统架构、交互设计、功能实现等多个维度进行深入重构与优化。首先，在系统架构层面，计划对现有模块进行解耦处理，明确各业务组件之间的职责边界，提高系统的可维护性与可扩展性，为后续功能拓展和性能调优打下坚实基础。
+
+其次，在前端交互设计方面，将引入更现代化的UI/UX设计理念，优化页面跳转逻辑，减少不必要的页面刷新，提升用户在连续操作中的连贯性。同时，针对当前对话生成报告过程中的交互断层问题，计划引入局部渲染技术（如SPA单页应用模式），实现动态内容加载与状态保持，从而提升整体使用流畅度。
+
+在功能完善方面，将进一步丰富策略配置模块的灵活性，支持更多参数组合与条件判断逻辑，满足不同场景下的个性化需求。同时，也将加强报告生成模块的定制能力，允许用户对生成内容的格式、样式、结构进行更精细化的控制，提升输出结果的专业性和适用性。
+
+此外，随着用户反馈的不断积累，我们也将在下一阶段积极响应需求变更，优先解决当前用户在使用过程中提出的高频痛点问题，逐步完善系统生态。同时，也将探索引入用户行为分析、智能推荐等功能，进一步提升系统的智能化水平和服务能力。
+
+综上所述，虽然本系统已完成阶段性建设并通过初步测试验证，但距离真正意义上的“成熟产品”仍有不小差距。未来的工作将以用户为中心，持续打磨细节、优化体验、强化性能，推动系统向更高标准迈进，力求打造一个功能强大、交互自然、稳定高效的智能报告生成平台。接下来讲围绕用户体验为中心，重构部分系统设计和解耦部分业务流程，让系统变得更能用，更易用，更好用，并回应初步需求变更，完成软件迭代。
 
 
 \begin{reference}
@@ -1045,7 +1258,7 @@ MySQL 和 Redis 在国内的云服务平台（如 华为云、阿里云、腾讯
 \begin{acknowledgement}
 在这个项目即将完成之际，我想要表达我最诚挚的感谢。首先，感谢我的团队成员们，在这段时间里，你们的支持、智慧和辛勤工作是我们取得进展的关键。特别感谢那些在信息搜集、数据存储、数据检索与分析模块中付出巨大努力的学长学姐们，没有你们的努力，这个系统不可能如此完善。
 
-我也想对指导和支持我们的导师们表示衷心的感谢，感谢您给予我们信任和鼓励，让我们能够自由地探索和实现创新想法。
+我也想对指导和支持我的林坤辉教授和王美红教授表示衷心的感谢，感谢您给予我们信任和鼓励，让我们能够自由地探索和实现创新想法。
 
 最后，对于我的家人和朋友们，感谢你们在我忙碌于这个项目期间给予的理解和耐心。是你们的支持给予了我前进的动力。
 

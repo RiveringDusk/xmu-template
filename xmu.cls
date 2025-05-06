@@ -44,6 +44,10 @@
 \RequirePackage[colorlinks,citecolor=black,linkcolor=black,urlcolor=black,bookmarksnumbered=true,bookmarksopen=true]{hyperref}
 % 条件编译
 \RequirePackage{ifthen}
+% 去掉空格
+\RequirePackage{caption}
+\DeclareCaptionLabelSeparator{mysep}{ }
+\captionsetup{labelsep=mysep}
 
 %%%%%%%% 用户自定义变量 %%%%%%%%
 
@@ -368,7 +372,7 @@
     \fancyhf{}
     \renewcommand{\headrulewidth}{0.4pt}
     \fancyhead[OC]{\rm\zihao{-5}\leftmark}  %奇数页眉
-    \fancyhead[EC]{\rm\zihao{-5}\xmu@title} %偶数页眉
+    \fancyhead[EC]{\rm\zihao{-5}\xmu@title\xmu@subtitle} %偶数页眉
     \fancyfoot[C]{\rm\zihao{-5}\thepage}    %页脚
     \global\@topnum\z@
     \secdef\@chapter\@schapter
