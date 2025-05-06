@@ -34,6 +34,7 @@
 \RequirePackage{bm}
 % 绘图
 \RequirePackage{pgfplots}
+\RequirePackage{float}
 % 算法
 \RequirePackage[ruled]{algorithm2e}
 % 自定义脚注
@@ -48,6 +49,9 @@
 \RequirePackage{caption}
 \DeclareCaptionLabelSeparator{mysep}{ }
 \captionsetup{labelsep=mysep}
+% 带圈数字
+% \RequirePackage{circledsteps}
+
 
 %%%%%%%% 用户自定义变量 %%%%%%%%
 
