@@ -60,15 +60,7 @@ The development of this module covered multiple stages including requirement ana
 % 第一部分 项目背景
 \xmuchapter{绪论}{Introduction}
 \xmusection{项目背景}{Research Background and Significance}
-科技领域的快速发展和政策环境的日益复杂，使得针对科技领域政策论证的研究需要应对海量且多样化的数据资源。传统的信息收集和分析方法已不足以支撑迅速变化的政策论证需求，迫切需要一个集成多模态数据采集、存储、分析及智能报告生成的综合系统，以高效支持科技政策的信息管理和科学决策。科技发展政策论证数据库软件应运而生，旨在通过自动化的多源数据采集和深度分析，实现政策信息的全面覆盖和智能化处理。平台将支持文本、语音、图片、视频等多种形式的数据集成，通过定制化的爬虫技术，实现多模态数据的高效采集与管理，并提供实时监控和可视化分析功能，以保证数据获取的全面性和精确性。
-
-\par 科技发展政策论证数据库软件系统应具备大规模数据采集、存储和分析能力，能够采集包括多个国家和地区，支持高效管理和存储百万级别的多模态数据，同时提供灵活的数据清洗、编辑和导入导出操作。通过分布式存储架构和先进的数据处理技术，系统确保数据处理的快速响应和存储的高效利用。此外，系统将利用自然语言处理和数据增强技术，对数据进行预处理和深度分析，为科技政策研究提供更高质量的基础数据。
-
-\par 为提升分析的深度，软件系统集成相关领域的大语言模型，具备可解释性和智能推理能力。通过提示工程和思维链技术，系统能够基于领域特性精准回答复杂问题，并支持多用户交互，为政策研究人员提供智能化的知识推理和问题解答功能。大语言模型的高效部署方案确保系统在内网环境中的安全运行。系统还具备智能报告生成和推送功能，支持根据用户自定义策略自动生成报告，并通过大语言模型辅助生成专业的报告框架和内容。用户可在系统中灵活修订报告，并根据需求选择多种推送方式，确保信息传递的及时性和针对性。
-
-\par 科技发展政策论证数据库软件系统的推出，将显著提升政策研究的效率与准确性，为政策制定提供系统化的支持。通过集成前沿的数据处理技术和大语言模型，将为政策分析、推理和决策提供创新的解决方案，助力科学决策和研究的高效推进。
-
-\par 针对本模块，系统将支持对用户自定义的策略进行增删改查管理，可支持多个的报告策略模板；支持基于用户自定义策略的自动报告生成；支持基于大语言模型的报告框架自动生成，利用大语言模型自动生成专业报告框架，支持用户对该框架进行编辑修订管理，支持综合自动生成和用户自定义模式集成智能生成报告框架；支持基于大语言模型的报告内容自动生成，支持针对框架中各个分项构建提示工程和思维链，自动生成分项报告详细内容；支持用户对所生成的报告内容进行修订；根据用户要求，支持有邮件服务器推送和无邮件服务器推送两种数据推送模式，支持进行多用户推送。
+科技领域的快速发展和政策环境的日益复杂，使得研究需要应对海量且多样化的数据资源。传统的信息收集和分析方法难以支撑迅速变化的政策论证需求，迫切需要一个集成多模态数据采集、存储、分析及智能报告生成的综合系统，以高效支持科技政策的信息管理和科学决策。本系统应运而生，旨在通过自动化的多源数据采集和深度分析，以实现政策信息的全面覆盖和智能化处理。
 
 % \xmusection{论文组织结构}{Thesis Organization Structure}
 
@@ -90,7 +82,8 @@ The development of this module covered multiple stages including requirement ana
 \par 2、前端技术实现方面：采用 Vue 3 构建响应式页面结构，利用组件化思想提升代码复用率与可维护性；通过 Element UI 快速搭建美观且交互良好的界面组件；并通过 Axios 实现与后端的数据通信，确保数据实时展示与更新。
 \par 3、AI大模型的应用方面：在报告生成过程中，引入了预训练的大语言模型作为辅助工具，根据用户输入的关键词与上下文信息，自动生成初步报告草稿，大幅减少人工编写时间，提高了报告输出效率与质量。
 
-本文按照研究的内容和逻辑顺序分为以下几个部分：
+\xmusection{论文组织结构}{Thesis Organization Structure}
+本文围绕此系统的设计和实现，按照逻辑顺序共分为以下七章，各章节安排如下：
 
 第一章：绪论（Introduction）
 本章主要介绍了本研究的项目背景与意义，阐述了报告管理模块在数据分析系统中的重要性，并概述了当前国内外的研究现状。此外，还明确了本文的研究目标、主要内容以及论文的整体组织结构，为后续章节奠定了基础。
@@ -290,9 +283,9 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 在非功能需求方面，本子模块的设计需要重点考虑性能、可靠性、安全性及易用性等多个维度。首先，系统必须具备良好的性能表现，即使在高并发场景下也需保持快速响应和稳定运行，确保用户体验不受影响。其次，系统的可靠性至关重要，需通过合理的架构设计避免单点故障，确保服务的高可用性和数据的一致性。在安全性方面，系统应对数据传输过程采用加密技术，保护用户的隐私和敏感信息，并严格控制用户访问权限，防止未经授权的操作。此外，考虑到未来可能的功能扩展和技术升级，系统的设计应具备良好的可扩展性，以便于后续添加新功能或适应业务增长需求。最后，界面设计应尽量简洁直观，减少用户的学习成本，提高操作便捷性，从而为用户提供流畅的使用体验。
 
 \xmusection{本章小结}{Summary}
-\par 本章详细阐述了报告生成子模块的需求分析，包括背景介绍、目标设定、功能需求及非功能需求。通过将大模型与报告生成模块从主系统中拆分出来，我们旨在降低系统的耦合度，同时提升模块的灵活性和扩展性。本子模块的核心目标是为用户提供高效、灵活且专业的报告生成服务，支持用户自定义策略的管理，并利用大语言模型技术实现报告框架和内容的智能生成。此外，系统还提供了编辑修订功能，确保最终报告能够满足用户的特定需求。在数据推送方面，系统支持基于邮件服务器和无邮件服务器的两种模式，以适应不同的应用场景和用户需求。为了确保系统的成功实施，设计过程中重点关注了性能、可靠性、安全性和易用性等非功能需求，力求在高并发情况下保持系统的稳定性和响应速度，保障数据的安全与一致性，同时提供简洁直观的用户界面，以减少用户的学习成本并提高操作便捷性。
+\par 本章详细阐述了报告生成子模块的需求分析，包括背景介绍、目标设定、功能需求及非功能需求。通过将大模型与报告生成模块从主系统中拆分出来，我们旨在降低系统的耦合度，同时提升模块的灵活性和扩展性。本子模块的核心目标是为用户提供高效、灵活且专业的报告生成服务。设计过程中重点关注了性能、可靠性、安全性和易用性等非功能需求，力求在高并发情况下保持系统的稳定性和响应速度，保障数据的安全与一致性，同时提供简洁直观的用户界面，以减少用户的学习成本并提高操作便捷性。
 
-\par 数据流层面，我们详细描述了报告生成模块的数据流，展示了从用户输入自定义报告策略到最终生成并存储报告的全过程。该模块不仅能够自动化生成报告框架，还能根据用户的修订进行调整，确保报告的准确性和实用性。数据层采用MySQL和Redis进行数据存储和缓存，这些技术在国内云服务平台中也有广泛支持，进一步提升了系统的性能和可靠性。
+\par 本章还详细描述了报告生成模块的数据流，展示了从用户输入自定义报告策略到最终生成并存储报告的全过程。该模块不仅能够自动化生成报告框架，还能根据用户的修订进行调整，确保报告的准确性和实用性。
 
 % 第四部分： 模块概要设计
 % 
@@ -371,20 +364,19 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 % \xmusubsection{对话式流程引导模块}{Dialog-based Process Guidance Module}
 % 正文内容。
 
-\xmusection{模块内部结构设计}{Data Storage Design}
+\xmusection{模块类图}{Module Class}
 
-\xmusubsection{模块类图}{Data Storage Design}
 
-模块的主要类包括：
-\par (1)ReportGenerator：负责生成报告。
-\par (2)ReportManager：管理报告的存储和检索。
-\par (3)DataProcessor：处理生成报告所需的数据。
-\par (4)UserInterface：与用户交互，显示报告并收集反馈。
-\par (5)PushService：负责将报告推送给用户。
-\par (6)Data：包含报告生成所需的数据。
-\par (7)Report：表示生成的报告。
-\par (8)User：表示使用系统的用户。
-\par (9)Notification：用于向用户发送通知。
+模块类图如4-1所示，其中模块的主要类包括：
+\par 1.ReportGenerator：负责生成报告。
+\par 2.ReportManager：管理报告的存储和检索。
+\par 3.DataProcessor：处理生成报告所需的数据。
+\par 4.UserInterface：与用户交互，显示报告并收集反馈。
+\par 5.PushService：负责将报告推送给用户。
+\par 6.Data：包含报告生成所需的数据。
+\par 7.Report：表示生成的报告。
+\par 8.User：表示使用系统的用户。
+\par 9.Notification：用于向用户发送通知。
 
 \begin{figure}[!htb]
     \centering
@@ -393,15 +385,15 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 \end{figure}
 
 类和类之间的关系：
-\par (1)ReportGenerator 使用 DataProcessor 来处理数据。
-\par (2)ReportGenerator 创建 Report，然后由 ReportManager 管理。
-\par (3)Report 由 UserInterface 显示给用户。
-\par (4)用户通过 UserInterface 审阅 Report。
-\par (5)Report 由 PushService 发送给用户。
-\par (6)DataProcessor 处理 Data。
-\par (7)ReportGenerator 考虑 User 的偏好。
-\par (8)UserInterface 与 User 交互。
-\par (9)PushService 触发 Notification 向用户发送通知。
+\par 1.ReportGenerator 使用 DataProcessor 来处理数据。
+\par 2.ReportGenerator 创建 Report，然后由 ReportManager 管理。
+\par 3.Report 由 UserInterface 显示给用户。
+\par 4.用户通过 UserInterface 审阅 Report。
+\par 5.Report 由 PushService 发送给用户。
+\par 6.DataProcessor 处理 Data。
+\par 7.ReportGenerator 考虑 User 的偏好。
+\par 8.UserInterface 与 User 交互。
+\par 9.PushService 触发 Notification 向用户发送通知。
 
 \xmusection{模块交互图}{interface}
 为实现高效的报告处理，允许用户自定义报告结构，后端使用Spring Boot实现报告生成引擎和任务调度功能，数据处理则依赖于集成的数据清洗与转换工具，确保生成的报告数据准确、完整。此外，系统将利用云存储技术对生成的报告文件进行高效管理和检索，确保用户可以随时访问所需的报告和相关数据。
@@ -413,7 +405,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 \par 自定义模板：允许用户上传自己的模板或从头开始创建新的模板。
 \par 模板编辑器：提供一个用户友好的界面，让用户能够轻松添加、删除或修改文本、图表和其他元素。
 \par 预览功能：在应用任何更改之前，允许用户预览模板，确保一切按照他们的期望进行。
-用户交互模版管理的时序图如下所示：
+用户交互模版管理的时序图如图4-2所示：
 
 \begin{figure}[!htb]
     \centering
@@ -426,7 +418,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 \par API服务模块：提供RESTful API接口，供前端调用以实现用户界面的各种功能。关键特性：路由管理： 定义清晰的API路由，使得前端可以轻松地与后端通信。请求处理： 处理来自前端的请求，并返回相应的数据或操作结果。
 
 \xmusubsection{用户自定义策略报告生成}{Report Generation Based on User-defined Strategy }
-用户自定义专业报告生成模块是智能报告生成模块的核心功能之一，旨在为用户提供一个灵活的系统，以创建高度定制化的报告。该模块允许用户选择或设计模板、输入或上传数据、配置报告参数，并最终生成专业的报告文档。这些报告可以用于内部分析、客户展示或公开发布，支持多种格式，如PDF、Excel、Word等，图5-2为本部分时序交互图。
+用户自定义专业报告生成模块是智能报告生成模块的核心功能之一，旨在为用户提供一个灵活的系统，以创建高度定制化的报告。该模块允许用户选择或设计模板、输入或上传数据、配置报告参数，并最终生成专业的报告文档。这些报告可以用于内部分析、客户展示或公开发布，支持多种格式，如PDF、Excel、Word等，图4-3为本部分时序交互图。
 
 
 \begin{figure}[!htb]
@@ -456,7 +448,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 \par 文件存储与检索模块功能：负责管理系统中所有报告文件和相关数据文件的存储和检索，确保用户可以方便地访问所需文件。
 
 \xmusubsection{用户推送}{User Push}
-用户推送模块是智能报告生成系统中的一个关键组成部分，旨在通过实时或定时的方式向用户发送通知和更新。这个模块支持多种推送渠道，包括电子邮件、短信、应用内通知和Webhook等。它允许用户根据个人偏好设置通知选项，确保用户能够在第一时间获取到重要信息和报告更新。本部分时序图如5-5所示：
+用户推送模块是智能报告生成系统中的一个关键组成部分，旨在通过实时或定时的方式向用户发送通知和更新。这个模块支持多种推送渠道，包括电子邮件、短信、应用内通知和Webhook等。它允许用户根据个人偏好设置通知选项，确保用户能够在第一时间获取到重要信息和报告更新。本部分时序图如4-5所示：
 
 \begin{figure}[!htb]
     \centering
@@ -485,7 +477,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 \end{table}
 
 \xmusubsection{自动报告生成}{Automatic Report Generation}
-系统应支持基于用户自定义策略自动生成报告。生成的报告结构化且符合预设的模板。每次自动报告生成的记录应与相应的策略ID进行关联，以便后续查看和分析。报告生成的专业方向需涵盖脑与认知、脑机接口、生物材料、全球军事医学地理、核化生武器损伤医学防护、伤病救治、环境作业医学、仿生医学等相关方向，具体方向由用户指定。
+系统应支持基于用户自定义策略自动生成报告。生成的报告结构化且符合预设的模板。每次自动报告生成的记录应与相应的策略ID进行关联，以便后续查看和分析。
 \begin{table}[!htb]
     \centering
     \caption{自动报告生成\quad 数据库表}
@@ -693,7 +685,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 
 \par 在本章中，我们围绕系统的各个功能模块展开了深入而系统的详细设计工作，包括类图、时序图、接口定义以及数据库表结构等多个方面。通过类图的设计，我们清晰地梳理了系统中主要类之间的关系及其职责划分，明确了继承、聚合、依赖等面向对象的核心结构。这种基于UML的建模方式不仅为开发人员提供了统一的视角来理解整个系统的架构，也为后续代码实现和维护提供了良好的指导。此外，类图的设计还有助于发现潜在的设计问题，减少后期重构的风险，提升整体开发效率。
 \par 在系统行为逻辑的设计方面，我们通过绘制时序图，展示了关键业务流程中各组件或对象之间的交互顺序，尤其是在生成报告、用户权限验证、数据推送等核心操作中的执行路径。这些图形化展示有助于加深对系统运行机制的理解，也为测试用例的设计和异常流程的处理提供了理论依据。与此同时，为了规范前后端的数据通信，我们还设计了标准化的RESTful API 接口，涵盖了请求方式、入参格式、返回结构、错误码定义等细节内容，确保不同模块之间能够高效协作并具备良好的扩展性。而在数据库设计部分，我们根据功能需求构建了合理的表结构，详细定义了字段类型、长度、约束条件，并规划了索引策略以提升查询性能，从而保障了数据存储的安全性、一致性和高效性。
-\par 综上所述，本章通过对系统内部结构、交互流程、接口规范和数据模型的全面设计，为实际编码工作奠定了坚实的基础。所采用的设计方法不仅满足当前业务需求，也兼顾了系统的可扩展性、可维护性与稳定性，具有较强的实用价值。在未来开发和迭代过程中，这些设计成果将作为重要的技术文档持续发挥作用，为系统的优化升级提供有力支撑。
+% \par 综上所述，本章通过对系统内部结构、交互流程、接口规范和数据模型的全面设计，为实际编码工作奠定了坚实的基础。所采用的设计方法不仅满足当前业务需求，也兼顾了系统的可扩展性、可维护性与稳定性，具有较强的实用价值。在未来开发和迭代过程中，这些设计成果将作为重要的技术文档持续发挥作用，为系统的优化升级提供有力支撑。
 
 
 % 第六部分： 模块实现
@@ -820,80 +812,80 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
     \caption{大纲树形图页面}
 \end{figure}
 
-前端接收到JSON后需要对每一个部分的数据作预处理，具体而言需要将每一份数据增加用以删和改的“虚拟父节点”，并且在右侧的操作框里不应有“修改”按钮，这部分使用Vue3框架的v-if实现条件渲染。图6-6到6-7是前端页面在获得数据后对数据进行树化处理的代码:
+前端接收到JSON后需要对每一个部分的数据作预处理，具体而言需要将每一份数据增加用以删和改的“虚拟父节点”，并且在右侧的操作框里不应有“修改”按钮，这部分使用Vue3框架的v-if实现条件渲染。以下分别是前端页面在获得数据后对数据进行树化处理的代码:
 
-\begin{verbatim}
-// 处理树形数据代码
-const processedTreeData = computed(() => {
-  //过滤掉内容为空的节点
-  const Data = Object.entries(outlineData.value).filter(([key, value]) => value.length > 0);
-
-  return Data.map(([key, value], index) => ({
-      id: `parent-${index + 1}`, // 父节点 ID
-      section_title: `大纲 ${index + 1} `,
-      isCustomParent: true, // 标记为自创父节点
-      children: value.map((item) => ({
-        ...item,
-        id: item.id, // 确保每个节点有唯一的 ID
-        children: item.children || [], // 确保 children 存在
-      })),
-    }));
-});
-
-\end{verbatim}
-\par 以下是Vue3里条件渲染代码：
-\begin{verbatim}
-<template #default="{ node, data }">
-    <div class="custom-tree-node">
-        <div class="node-content">
-        <div class="node-title">{{ node.label }}</div>
-        <div class="node-description">{{ data.section_description }}</div>
-        </div>
-            <!-- 仅在非自创父节点时显示操作按钮 -->
-        <div v-if="!data.isCustomParent" class="node-actions">
-            <!--按钮UI控件，此处略-->
-        </div>
-    </div>
-</template>
-\end{verbatim}
-
-% \begin{figure}[!htb]
-%     \centering
-%     \includegraphics[width=45em]{outline-code1.png}
-%     \caption{树形数据处理代码}
-% \end{figure}
+% \begin{verbatim}
+% // 处理树形数据代码
+% const processedTreeData = computed(() => {
+%   //过滤掉内容为空的节点
+%   const Data = Object.entries(outlineData.value).filter(([key, value]) => value.length > 0);
 % 
-% \begin{figure}[!htb]
-%     \centering
-%     \includegraphics[width=45em]{outline-code2.png}
-%     \caption{Vue3条件渲染代码}
-% \end{figure}
+%   return Data.map(([key, value], index) => ({
+%       id: `parent-${index + 1}`, // 父节点 ID
+%       section_title: `大纲 ${index + 1} `,
+%       isCustomParent: true, // 标记为自创父节点
+%       children: value.map((item) => ({
+%         ...item,
+%         id: item.id, // 确保每个节点有唯一的 ID
+%         children: item.children || [], // 确保 children 存在
+%       })),
+%     }));
+% });
+% 
+% \end{verbatim}
+%%\par 以下是Vue3里条件渲染代码：
+%\begin{verbatim}
+%<template #default="{ node, data }">
+%    <div class="custom-tree-node">
+%        <div class="node-content">
+%        <div class="node-title">{{ node.label }}</div>
+%        <div class="node-description">{{ data.section_description }}</div>
+%        </div>
+%            <!-- 仅在非自创父节点时显示操作按钮 -->
+%        <div v-if="!data.isCustomParent" class="node-actions">
+%            <!--按钮UI控件，此处略-->
+%        </div>
+%    </div>
+%</template>
+%\end{verbatim}
+
+ \begin{figure}[!htb]
+     \centering
+     \includegraphics[width=25em]{outline-code1.png}
+     %\caption{树形数据处理代码}
+ \end{figure}
+ 
+ \begin{figure}[!htb]
+     \centering
+     \includegraphics[width=25em]{outline-code2.png}
+     %\caption{Vue3条件渲染代码}
+ \end{figure}
 
 为了实现用户自主进行新增操作，通过弹窗里的“新增一行”，借助Vue3框架的v-for遍历渲染实现页面内动态渲染。具体而言：将前端需要渲染的DOM节点放入JavaSript的列表里，每当新增一行时往列表里推一栏空数据，并绑定到DOM节点上。以下示例前端代码，图5-6和5-7实现效果：
 
-\begin{verbatim}
-<div v-for="(item, index) in newOutlines" :key="index" class="outline-item">
-    <!--div之间数据绑定后端Json，此处略-->            
-    <!--在此Div间，Vue3框架会动态地将数据渲染至弹窗-->
-</div>
-\end{verbatim}
+ \begin{figure}[H]
+     \centering
+     \includegraphics[width=25em]{outline-code4.png}
+     %\caption{Vue3遍历渲染代码}
+ \end{figure}
+% \begin{verbatim}
+% <div v-for="(item, index) in newOutlines" :key="index" class="outline-item">
+%     <!--div之间数据绑定后端Json，此处略-->            
+%     <!--在此Div间，Vue3框架会动态地将数据渲染至弹窗-->
+% </div>
+%\end{verbatim}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=45em]{outline-xin1.png}
+    \includegraphics[width=35em]{outline-xin1.png}
     \caption{新增一行前}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=45em]{outline-xin2.png}
+    \includegraphics[width=35em]{outline-xin2.png}
     \caption{新增一行后}
 \end{figure}
 
-% \begin{figure}[!htb]
-%     \centering
-%     \includegraphics[width=45em]{outline-code4.png}
-%     \caption{Vue3遍历渲染代码}
-% \end{figure}
 
 大模型生成框架主要展示框架内容，生成内容无树形结构需求，故使用Element Plus\cite{element2}的表格组件展示报告列表，表格的列包括：报告标题、创建时间、生成报告的模型、报告所属类型、报告的预览内容摘要，并通过CSS文件显示报告的内容摘要，图5-8为实现图：
 
@@ -970,7 +962,7 @@ const processedTreeData = computed(() => {
 %
 % 
 % 系统测试
-\xmuchapter{系统测试与验证}{System Testing and Validation}
+\xmuchapter{模块测试与验证}{Module Testing and Validation}
 % 第七章 导语
 为确保系统功能的完整性与运行的稳定性，在完成模块开发与集成后，系统进入了全面测试阶段。本章将围绕测试环境、测试策略及关键测试内容进行详细介绍，涵盖功能测试、性能测试。全面评估系统的可用性与可靠性，为系统最终上线与部署提供有力保障。
 \xmusection{测试环境}{Testing Environment}
@@ -1499,9 +1491,7 @@ const processedTreeData = computed(() => {
 
 
 \xmusection{本章小结}{Summary}
-本章围绕系统的部署环境与测试过程进行了详细介绍，旨在验证系统在既定软硬件条件下的功能完整性、运行稳定性及性能表现。首先，从软硬件部署方面，明确了系统运行所需的服务器配置、操作系统、数据库、中间件及网络环境，确保系统具备良好的可部署性与兼容性。通过合理的架构设计，系统实现了前后端分离，为后续各项功能的稳定实现提供了基础保障。
-
-在系统测试部分，分别对报告框架生成与管理模块、用户自定义策略管理模块进行了功能测试，共计完成14个测试用例，所有测试均顺利通过，功能逻辑正确、交互流畅。同时，在性能测试中，重点验证了报告生成效率，在多种负载和并发场景下，系统平均响应时间控制在14秒以内，满足性能指标要求。整体来看，系统已达到预期设计目标，具备上线运行的条件。
+本章围绕系统的部署环境与测试过程进行了详细介绍，旨在验证系统在既定软硬件条件下的功能完整性、运行稳定性及性能表现。在系统测试部分，分别对报告框架生成与管理模块、用户自定义策略管理模块进行了功能测试，共计完成14个测试用例，所有测试均顺利通过，功能逻辑正确、交互流畅。同时，在性能测试中，重点验证了报告生成效率，在多种负载和并发场景下，系统平均响应时间控制在14秒以内，满足性能指标要求。
 
 \xmuchapter{总结与展望}{Conclusion and Outlook}
 \xmusection{研究成果总结}{Summary of Research Achievements}
