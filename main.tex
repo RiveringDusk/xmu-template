@@ -6,7 +6,10 @@
 
 \print % 电子版 / 打印版（打印版将在某些偶数页产生空白页）
 \design % 毕业设计 / 毕业论文（取消注释即为毕业设计）
-\title[——报告生成模块]{某科技政策数据分析系统设计与实现}{A Science and Technology Policy Data Analysis System Design and Implementation}
+\title{某科技政策数据分析系统设计与实现}
+{A Science and Technology Policy Data Analysis System Design and Implementation}
+{——报告生成模块}
+{——Report Generation Module}
 \author{周淡茗}
 \idn{22920212204505}
 \college{信息学院}
@@ -34,7 +37,7 @@
 
 \begin{abstract}
 % 本系统囊括了信息情报搜集，数据存储，数据检索与分析和智能报告生成与推送四个部分。本人负责其中的智能报告生成与推送的部分，其中主要负责前端开发，其包括了几个增删改查的功能，以及对话式推进报告生成的前端设计。
-\par 本系统是一个集信息情报搜集、数据存储、数据检索与分析以及智能报告生成与推送于一体的综合性信息管理系统。系统旨在实现对多源异构数据的采集与整合，通过智能化手段辅助用户进行数据分析与决策支持，适用于政府、企业及科研机构等需要高效处理信息的场景。系统采用前后端分离的架构设计，后端依托数据库技术与数据分析算法完成数据处理任务，前端则注重用户体验与交互逻辑的设计与实现，具备良好的扩展性、稳定性和高并发访问支持能力。
+\par 政策发展变化迅速，为响应政策对其管理的系统需求应运而生。本系统是一个集信息情报搜集、数据存储、数据检索与分析以及智能报告生成与推送于一体的综合性信息管理系统。系统旨在实现对多源异构数据的采集与整合，通过智能化手段辅助用户进行数据分析与决策支持，适用于政府、企业及科研机构等需要高效处理信息的场景。系统采用前后端分离的架构设计，后端依托数据库技术与数据分析算法完成数据处理任务，前端则注重用户体验与交互逻辑的设计与实现，具备良好的扩展性、稳定性和高并发访问支持能力。
 \par 本人主要负责“智能报告生成与推送”模块的开发工作，重点完成了该模块的前端功能设计与实现。在该模块中，实现了报告生成流程中的基础数据操作功能（增删改查），并通过接口调用与后端进行数据通信，确保数据的实时获取与展示。同时，基于对话式交互设计理念，构建了引导用户逐步完成报告生成的界面流程，提升了系统的易用性与交互体验。
 \par 整个模块的开发过程涵盖了需求分析、原型设计、功能实现与测试优化等多个环节，最终成功集成至系统整体框架中，为提升系统的智能化水平和应用价值提供了有力支撑。通过本模块的实现，系统能够高效响应用户需求，自动生成结构化报告，并支持多种方式的数据输出与推送，显著提高了信息处理效率和用户满意度。
 \end{abstract}
@@ -43,7 +46,7 @@
 
 \begin{enabstract}
 % The system consists of four core modules: information gathering, data storage, data retrieval and analysis, and intelligent report generation and delivery. My role focused on the intelligent report generation and delivery component, where I was mainly responsible for front-end development. This included building user interfaces for common operations such as creating, reading, updating, and deleting content, as well as designing a conversational UI to guide users interactively through the report generation process.
-This system is a comprehensive information management platform that integrates functions such as intelligence collection, data storage, retrieval and analysis, as well as intelligent report generation and delivery. Its primary goal is to collect and integrate multi-source heterogeneous data, and to assist users in data analysis and decision-making through intelligent methods. It is widely applicable in government agencies, enterprises, and research institutions—any environment requiring efficient information processing.
+As the rapid development of policy, the need for its manaegement is also growing. This system is a comprehensive information management platform that integrates functions such as intelligence collection, data storage, retrieval and analysis, as well as intelligent report generation and delivery. Its primary goal is to collect and integrate multi-source heterogeneous data, and to assist users in data analysis and decision-making through intelligent methods. It is widely applicable in government agencies, enterprises, and research institutions—any environment requiring efficient information processing.
 
 The system adopts a front-end and back-end decoupled architecture. The back-end leverages database technologies and data analysis algorithms to handle complex data processing tasks, while the front-end focuses on user experience and interactive design. This structure ensures high scalability, stability, and support for concurrent access, enabling efficient processing of large-scale data.
 
@@ -169,20 +172,20 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 \xmusubsection{数据库系统选型}{Selection of Database}
 在数据库选型方面，MySQL与PostgreSQL都是免费、开源、强大、且功能丰富的数据库。MySQL 是一个成熟的关系型数据库，广泛用于各种规模的应用，能够有效地处理百万级别的数据\cite{mysql1}。其支持 ACID 特性，保证数据一致性、隔离性、持久性，并且拥有强大的查询和索引优化能力。而可靠性是PostgreSQL的最高优先级。它以坚如磐石的品质和良好的工程化而闻名，支持高事务、任务关键型应用。PostgreSQL的文档非常精良，提供了大量免费的在线手册，还针对旧版本提供了归档的参考手册。PostgreSQL拥有强大的社区支持，还有来自于独立厂商的商业支持。数据一致性与完整性也是PostgreSQL的高优先级特性。PostgreSQL是完全支持ACID特性，对于数据库访问提供了强大的安全性保证。介于以下几点原因，本项目选择MySQL作为数据库。
 
-(1)性能优化
+1、性能优化
 \par 索引：MySQL 支持多种类型的索引（如主键索引、唯一索引、全文索引、复合索引等）。对于百万级数据的存储，合理的索引设计是保证查询性能的关键。特别是常用查询字段、连接条件、排序字段等应建立索引\cite{mysql1}。
 查询优化：MySQL 提供多种查询优化手段，例如 EXPLAIN 命令帮助分析查询计划，使用合适的 SQL 查询语句优化查询效率。
 分区表：对于大数据表，可以使用分区表技术（如基于时间、范围等条件进行分区）来提高查询效率，减少扫描数据的量。
 
-(2)扩展性
+2、扩展性
 \par 读写分离：可以通过 MySQL 的主从复制架构实现读写分离，减轻主库的负担，提高系统的可伸缩性。主库负责写操作，从库负责读操作，适合读多写少的场景\cite{mysql1}。
 分库分表：随着数据量的不断增加，单一数据库可能成为瓶颈。可以采用分库分表的策略，将数据根据某些规则分散到多个库和表中，进一步提升数据库的扩展性。
 
-(3)高可用性与容错
+3、高可用性与容错
 \par 主从复制：MySQL 支持主从复制，可通过配置多个从库来增强系统的负载均衡和容错能力，提高数据的可靠性\cite{mysql1}。
 分布式存储：采用minio分布式存储文件数据。
 
-(4)支持大数据量
+4、支持大数据量
 \par MySQL 已经被广泛用于处理大规模数据存储和高并发查询场景。通过适当的硬件支持、数据分区及分布式处理，MySQL 在项目预计50000条数据的处理上能够保持较好的性能\cite{mysql1}
 %\xmusection{数据通信与状态管理}{Data Communication and State Management}
 %正文内容。
@@ -464,7 +467,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 系统应支持对用户自定义的策略进行增、删、改、查的管理功能。每个用户可以创建多个报告策略模板，并且能够对这些模板进行管理（编辑、删除）。
 \begin{table}[!htb]
     \centering
-    \caption{用户自定义策略管理\quad 数据库表}
+    \caption{用户自定义策略管理数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
@@ -480,7 +483,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 系统应支持基于用户自定义策略自动生成报告。生成的报告结构化且符合预设的模板。每次自动报告生成的记录应与相应的策略ID进行关联，以便后续查看和分析。
 \begin{table}[!htb]
     \centering
-    \caption{自动报告生成\quad 数据库表}
+    \caption{自动报告生成数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
@@ -498,7 +501,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 
 \begin{table}[!htb]
     \centering
-    \caption{框架自动生成\quad 数据库表}
+    \caption{框架自动生成数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
@@ -516,7 +519,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 
 \begin{table}[!htb]
     \centering
-    \caption{报告生成\quad 数据库表}
+    \caption{报告生成数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
@@ -537,7 +540,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 
 \begin{table}[!htb]
     \centering
-    \caption{数据推送模式\quad 数据库表}
+    \caption{数据推送模式数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
@@ -553,7 +556,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 
 \begin{table}[!htb]
     \centering
-    \caption{提示示例\quad 数据库表}
+    \caption{提示示例数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
@@ -572,7 +575,7 @@ Vue3框架结合 HTML、CSS 和 JavaScript ,使得我们能够高效地实现报
 
 \begin{table}[!htb]
     \centering
-    \caption{思维链\quad 数据库表}
+    \caption{思维链数据库表}
     \label{data_elements_simple}
     \begin{tabular}{|l|l|l|l|}
         \hline
